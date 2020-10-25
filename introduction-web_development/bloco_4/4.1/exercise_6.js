@@ -1,5 +1,6 @@
 let peça = "rook";
 
+
 switch (peça.toLowerCase()) {
     case "king":
         console.log("king -> horizontals, verticals and diagonals");

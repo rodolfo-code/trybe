@@ -1,5 +1,6 @@
 let nota = 28;
 
+
 if (nota < 0 || nota > 100) {
     console.log("ERRO: Nota forado padrao");
 } else if (nota >= 90) {
