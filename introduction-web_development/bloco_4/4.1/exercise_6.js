@@ -24,4 +24,4 @@ switch (peça.toLowerCase()) {
     case "pawn":
         console.log("pawn -> verticals");
         break;
-}
+};
