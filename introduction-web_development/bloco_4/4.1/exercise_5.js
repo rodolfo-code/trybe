@@ -8,4 +8,4 @@ if (somaAngulos == 180){
     console.log("True");
 } else {
     console.log("False")
-}
+};
