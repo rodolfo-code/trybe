@@ -14,4 +14,4 @@ if (nota < 0 || nota > 100) {
     console.log("Nota: E");
 } else {
     console.log("Nota: F");
-}
+};
