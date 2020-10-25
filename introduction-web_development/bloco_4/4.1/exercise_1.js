@@ -1,6 +1,7 @@
 let a = 100;
 let b = 50;
 
+
 let soma = a + b;
 console.log(soma);
 
