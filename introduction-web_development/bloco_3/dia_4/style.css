@@ -16,3 +16,45 @@
     display: inline-block;
     margin-right: 20px;
 }
+
+.section-1 img{
+    float: left;
+    margin-right: 10px;
+    border: solid gray;
+}
+.section-1{
+    border: groove;
+    width: 70%;
+}
+
+.color-content{
+    margin: 5px;
+    text-align: justify;
+    width: 55%;
+}
+
+.section-2{
+    border: groove;
+    clear: both;
+    width: 70%;
+}
+
+.section-2 img{
+    float: right;
+    margin-right: 300px;
+    border: solid gray;
+    margin-bottom: 30px;
+}
+
+.sea-content{
+    margin: 5px;
+    border: 0;
+    padding: 0;
+    text-align: justify;
+    width: 28%;
+    margin-bottom: 15px;
+}
+
+#aside{
+    
+}
