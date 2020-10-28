@@ -1,5 +1,15 @@
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]
+let megaSenaNumbers = [];
 
-for(let pos = 0; pos < numbers.length; pos = pos + 1) {
-    console.log(numbers[pos]);
-};
+
+
+
+let firstNumber = Math.ceil(Math.random() * 60);
+let secondNumber = Math.ceil(Math.random() * 60);
+let thirdNumber = Math.ceil(Math.random() * 60);
+let fourthNumber = Math.ceil(Math.random() * 60);
+let fifithNumber = Math.ceil(Math.random() * 60);
+let sixthNumber = Math.ceil(Math.random() * 60);
+
+megaSenaNumbers = [fifithNumber, secondNumber, thirdNumber, fourthNumber, fifithNumber, sixthNumber];
+
+let 
