@@ -9,7 +9,7 @@ let sixthNumber = Math.ceil(Math.random() * 60);
 
 megaSenaNumbers = [fifithNumber, secondNumber, thirdNumber, fourthNumber, fifithNumber, sixthNumber];
 
-let turma7Play = [7, 16, 28, 31, 37, 55];
+let turma7Play = [20, 16, 28, 31, 37, 55];
 let numberOfHits = 0;
 
 for (let i = 0; i < turma7Play.length; i += 1) {
@@ -22,5 +22,5 @@ for (let i = 0; i < turma7Play.length; i += 1) {
     }
 }
 
-console.log(megaSenaNumbers);
-console.log(numberOfHits);
+console.log(`Números sorteados: ${megaSenaNumbers}`);
+console.log(`Acertos do nosso jogo: ${numberOfHits}`);
