@@ -6,8 +6,9 @@ let info = {
 
   info.recorrente = "Sim"
 
-  // ou
+   // ou 
 
   info['recorrente'] = 'Sim'
 
   console.log(info)
+  

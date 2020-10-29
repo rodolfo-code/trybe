@@ -13,8 +13,4 @@ function itsPalindrome (wordToCheck) {
 
 console.log()
 console.log(itsPalindrome('pedro'))
-    
-
-//  OU
-
 

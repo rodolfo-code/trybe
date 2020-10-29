@@ -9,3 +9,5 @@ let info = {
   // ou
 
   console.log('Bem-vinda, '+ info['personagem']);
+
+  
