@@ -37,5 +37,7 @@ function verificaPalindrome(palavra) {
     }
   }
   
-  console.log(verificaPalindrome('arara')); //true
-  console.log(verificaPalindrome('desenvolvimento')); //false
+  console.log(verificaPalindrome('arara')); 
+  console.log(verificaPalindrome('desenvolvimento')); 
+
+  
