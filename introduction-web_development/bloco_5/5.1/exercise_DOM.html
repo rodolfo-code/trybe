@@ -30,7 +30,7 @@
     </style>
   </head>
   <body>
-    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    <h1 id="title">Exercício 5.1 - JavaEscripito </h1>
     <div class="main-content">
       <div class="center-content">
         <p>Texto padrão do nosso site</p>
@@ -39,17 +39,51 @@
       </div>
     </div>
     <script>
+        function modify(text) {
+            document.getElementsByTagName('p')[1].innerText = text;
+        }
+        modify('Daqui 2 anos estarei na europa trabalhando como Dev, dando inicio a minha startup. Não sei em que lugar ainda, pode ser Alemanha, UK ou Emirados Arabes.')
+
+        function squareColor(classToChange, color) {
+            document.getElementsByClassName(classToChange)[0].style.background = color;
+        }
+        squareColor("main-content", "rgb(76,164,109)")
+
+        squareColor("center-content", 'white')
+
+        function modifyText(elementId, text) {
+            document.getElementById(elementId).innerText = text;
+        }
+
+        modifyText('title', 'Exercício 5.1 - JavaScript')
+
+        function upperText() {
+            let upperParagraph = document.getElementsByTagName('p')[0];
+            upperParagraph.innerHTML = upperParagraph.innerHTML.toUpperCase();
+        }
+
+        upperText()
+
+        function showParagraphs() {
+            let paragraph = document.getElementsByTagName('p');
+            for (let i = 0; i < paragraph.length; index += 1) {
+                console.log(paragraph[i].innerHTML);
+            }
+        }
+        showParagraphs();
+        
+        
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
         - document.getElementsByTagName()
- Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
- Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
- Crie uma função que mude a cor do quadrado vermelho para branco.
- Crie uma função que corrija o texto da tag <h1>.
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
- Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+ *Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
+ *Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+ *Crie uma função que mude a cor do quadrado vermelho para branco.
+ *Crie uma função que corrija o texto da tag <h1>.
+ *Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+ *Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
     </script>
   </body>
