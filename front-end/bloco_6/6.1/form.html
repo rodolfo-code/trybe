@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="form-header">
+        <h1>Formulário de cadastro de currículo</h1>
+        <p><em>Preencha corretamenta os dados solicitados abaixo.</em></p>
+    </header>
+    <form action="" method="GET" class="data-form">
+        <div class="form-row">
+            <fieldset class="field-row">
+            <legend>Dados Pessoais</legend>
+                <div class="content">
+                    <label for="name">Nome completo:</label>
+                    <input type="text" name="full-name" id="name" maxlength="40" required>
+                </div>
+                <div class="content">
+                    <label for="email-style">Email:</label>
+                    <input type="email" name="email" id="email-style" placeholder="seuemail@trybe.com" maxlength="50"
+                        required>
+                </div>
+                <div class="content">
+                    <label for="">CPF:</label>
+                    <input type="number" name="document-cpf" maxlength="11" required>
+                </div>
+                <div class="content">
+                    <label for="">Endereço residêncial:</label>
+                    <input type="text" name="address" maxlength="200" required>
+                </div>
+                <div class="content">
+                    <label for="">Cidade:</label>
+                    <input type="text" name="city" maxlength="28" required>
+                </div>
+                <div class="content">
+                    <label for="state-select">Estado:</label>
+                    <select name="estado" id="state-select" required></select>
+                </div>
+                <div class="content">
+                    <label for="housing-type-1">Casa:</label>
+                    <input type="radio" name="housing-type" id="housing-type-1" value="house" checked>
+                    <label for="housing-type-2">Apartamento:</label>
+                    <input type="radio" name="housing-type" id="housing-type-2" value="apartment">
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</body>
+
+</html>

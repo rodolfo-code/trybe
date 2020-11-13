@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(234, 237, 240);
+}
+
+.form-header {
+    text-align: center;
+    border: 1px solid rgb(214, 217, 220);
+    background-color: rgb(246, 247, 248);
+    width: 70%;
+    margin: 40px 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px;
+}
+
+.data-form {
+    text-align: left;
+    border: 1px solid rgb(214, 217, 220);
+    background-color: rgb(246, 247, 248);
+    width: 70%;
+    padding: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content {
+    margin: 20px;
+}
+
+.form-row input[type="text"], [type="email"], [type="number"] {
+    width: 100%;
+}
+
+.form-row [] {
+    width: 100%;
+}
