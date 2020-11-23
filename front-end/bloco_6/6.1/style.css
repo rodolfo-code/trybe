@@ -27,6 +27,12 @@ body {
     margin: 20px;
 }
 
+.field-content {
+    margin: 20px;
+    width: 30%;
+    text-align: left;
+}
+
 .form-row input[type="text"], [type="email"], [type="number"] {
     width: 100%;
 }
