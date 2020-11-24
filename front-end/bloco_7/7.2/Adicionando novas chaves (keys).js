@@ -13,3 +13,5 @@ console.log(customer)
 customer['firstName'] = 'Rodolfo';
 
 console.log(customer);
+
+
