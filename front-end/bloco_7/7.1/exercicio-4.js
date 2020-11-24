@@ -9,7 +9,7 @@ function maiorPalavra (frase) {
   return biggerWord
 }
 
-console.log(maiorPalavra('rodolfo vinicius paralelepipedo'))
+console.log(maiorPalavra("Antônio foi no banheiro e não sabemos o que aconteceu"))
 
 // ou
 
@@ -23,4 +23,10 @@ const biggestWord = (frase) => {
   }
   return biggerWord
 }
-console.log(biggestWord('Aqui na trybe estou cada vez melhor'))
+console.log(biggestWord("Antônio foi no banheiro e não sabemos o que aconteceu"))
+
+// ou
+
+const longestWord = text => text.split(' ').sort((wordA, wordB) => wordB.length - wordA.length)[0]
+
+console.log(longestWord("Antonio foi no banheiro e não sabemos o que aconteceu"))
