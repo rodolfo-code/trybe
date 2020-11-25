@@ -18,16 +18,22 @@ const lesson3 = {
   turno: 'noite',
 };
 
+const addShift = (obj, key, value) => {
+  obj[key] = value;
+  return obj
+};
 
-// lesson2['turno'] = 'manhã';
-// console.log(lesson2)
+console.log(addShift(lesson2, 'turno', 'manhã'));
 
-function addShift (obj, key, value) {
+// ou
+
+const addNewKey = (obj, key, value) => {
   let objetoDestino = obj;
   const chave = key;
   const valor = value;
   objetoDestino[chave] = valor
-  return objetoDestino;
+  return objetoDestino
 }
 
-console.log(addShift(lesson2, 'turno', 'manhã'))
+
+console.log(addNewKey(lesson2, 'turno', 'manhã'));
