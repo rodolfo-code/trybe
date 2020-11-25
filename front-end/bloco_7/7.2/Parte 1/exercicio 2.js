@@ -42,7 +42,6 @@ const customerInfo = (order) => {
 customerInfo(order);
 
 const orderModifier = (order) => {
-  const pizzas = ['muzzarella', 'calabresa'];
   order.order.pizza = {};
   const buyer = order.name = 'Luiz Silva';
   order.order.pizza['muzzarella'] = {
