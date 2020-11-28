@@ -1,0 +1,17 @@
+const unitTest = require('assert');
+
+const sum = (number) => {
+  let summation = 0;
+  for(index = 1; index = number; index++) {
+    summation += index;
+  }
+  return summation
+};
+
+// console.log(sum());
+
+// typeof(sum) === 'function'
+
+unitTest.strictEqual(typeof(sum), 'function', 'O resultado esperado era function')
+unitTest.strictEqual(sum(1), 1)
+unitTest.strictEqual(sum(3), 6)
