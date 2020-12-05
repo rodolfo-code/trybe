@@ -37,7 +37,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 4-4: _JavaScript - Objetos e funções_
 - [x] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-08-project-playground-function/tree/rodolfo-project-playground-function)_
 
-##### Bloco 5: Introdução - JavaScript - Projetos :hourglass_flowing_sand:
+##### Bloco 5: Introdução - JavaScript - Projetos :heavy_check_mark:
 
 - [x] 5-1: _JavaScript - DOM e seletores_
 - [x] 5-2: _JavaScript - Trabalhando com elementos_
@@ -49,7 +49,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/rodolfo-code/trybe)_
 - [ ] 5-7: _[Projeto - Carta Misteriosa](https://github.com/rodolfo-code/trybe)_
 
-##### Bloco 6: HTML & CSS avançado :hourglass_flowing_sand:
+##### Bloco 6: HTML & CSS avançado :heavy_check_mark:
 
 - [ ] 6-1: _HTML & CSS - Forms_
 - [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
@@ -58,14 +58,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 6-5: _CSS Responsivo - Mobile First_
 - [ ] 6-6: _[Projeto - Página inicial do Facebook](https://github.com/rodolfo-code/trybe)_
 
-##### Bloco 7: JavaScript ES6 & Testes Unitários :hourglass_flowing_sand:
+##### Bloco 7: JavaScript ES6 & Testes Unitários :heavy_check_mark:
 
 - [ ] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [ ] 7-2: _JavaScript ES6 - Objects_
 - [ ] 7-3: _Testes unitários em JavaScript_
 - [ ] 7-4: _[Projeto - JavaScript Testes Unitários](https://github.com/rodolfo-code/trybe)_
 
-##### Bloco 8: JavaScript ES6 :hourglass_flowing_sand:
+##### Bloco 8: JavaScript ES6 :heavy_check_mark:
 
 - [ ] 8-1: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
 - [ ] 8-2: _JavaScript ES6 - Higher Order Functions - map e filter_
