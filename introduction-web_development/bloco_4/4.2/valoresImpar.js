@@ -13,3 +13,13 @@ if(impar == 0) {
 } else {
     console.log(impar)
 }
+
+
+// Codigo refatorado
+
+
+const odd = (arr) => {
+    const result = arr.filter((curr) => curr % 2 !== 0).length
+    result > 0? console.log(result): console.log('Nenhum número ímpar encontrado')
+}
+odd(numbers)

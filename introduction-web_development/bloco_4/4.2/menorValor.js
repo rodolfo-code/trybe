@@ -9,3 +9,9 @@ for(let i = 0; i < numbers.length; i++) {
 }
 
 console.log(menorValor);
+
+// Codigo refatorado
+
+const lowesValue = (arr) => arr.reduce((acc, curr) => acc > curr? acc = curr: acc)
+
+console.log(lowesValue(numbers))
