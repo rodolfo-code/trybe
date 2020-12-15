@@ -8,3 +8,9 @@ for(let i = 0; i < numbers.length; i = i + 1) {
 }
 
 console.log(`A media entre todos os elementos do array numbers é ${media}`)
+
+// Codigo refatorado
+
+const average = (arr) => arr.reduce((acc, curr) => acc + curr)/ arr.length
+
+console.log(`A media entre todos os elementos do array numbers é ${average(numbers)}`)
