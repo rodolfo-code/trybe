@@ -6,3 +6,9 @@ for(let i = 0; i < numbers.length; i = i + 1) {
 }
 
 console.log(soma)
+
+// Código refatorado
+
+const sum = (arr => arr.reduce((acc, curr) => acc + curr ))
+
+console.log(sum(numbers))
