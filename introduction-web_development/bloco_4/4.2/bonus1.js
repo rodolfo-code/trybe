@@ -10,6 +10,12 @@ for (let i = 1; i < numbers.length; i++) {
     }
   }
 }
-
 console.log(numbers);
 
+
+// Codigo refatorado
+
+
+const sortNum = (arr) => arr.sort((a, b) => {a - b})
+
+console.log(sortNum(numbers))
