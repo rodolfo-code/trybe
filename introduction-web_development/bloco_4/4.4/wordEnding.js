@@ -1,4 +1,3 @@
-const wordEnding = (word, ending) => word.includes(ending)
+const wordEnding = (word, ending) => word.includes(ending, (word.length - ending.length))
 
-console.log(wordEnding('trybe', 'be'))
-
+console.log(wordEnding("joaofernando", "nando"))
