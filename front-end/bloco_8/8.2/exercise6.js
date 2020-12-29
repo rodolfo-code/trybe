@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { release } = require('os');
 
 const books = [
   {
@@ -63,10 +64,16 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = books[0].name
-  books.forEach((element) => element.name.length < nameBook.length? nameBook = element.name: nameBook)
-  return nameBook;
+const expectedResult = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu'
+]
+
+function oldBooks() {
+  const currentYear = new Date().getFullYear();
+  return books.filter(year => currentYear - year.releaseYear > 60)
+        .map(rel => rel.name)
 }
 
-assert.strictEqual(smallerName(), 'Duna');
+assert.deepStrictEqual(oldBooks(), expectedResult);

@@ -63,17 +63,41 @@ const books = [
   },
 ];
 
-function allNames() {
-  return books.reduce(
-    (acc, curr, index, array) =>
-      index === array.length - 1
-        ? `${acc} ${curr.author.name}.`
-        : `${acc} ${curr.author.name},`,
-    "Nomes:"
-  );
+const expectedResult = [
+  {
+    age: 31,
+    author: "Isaac Asimov",
+  },
+  {
+    age: 38,
+    author: "H. P. Lovecraft",
+  },
+  {
+    age: 39,
+    author: "Stephen King",
+  },
+  {
+    age: 43,
+    author: "George R. R. Martin",
+  },
+  {
+    age: 45,
+    author: "Frank Herbert",
+  },
+  {
+    age: 62,
+    author: "J. R. R. Tolkien",
+  },
+];
+
+function nameAndAge() {
+  return books.map(authorAge => (
+    {
+      age: authorAge.releaseYear - authorAge.author.birthYear,
+      author: authorAge.author.name
+    }
+  ))
+  .sort((obj1, obj2) => obj1.age - obj2.age)
 }
 
-assert.deepStrictEqual(
-  allNames(),
-  "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft."
-);
+assert.deepStrictEqual(nameAndAge(), expectedResult);
