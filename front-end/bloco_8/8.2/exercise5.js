@@ -63,10 +63,16 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = books[0].name
-  books.forEach((element) => element.name.length < nameBook.length? nameBook = element.name: nameBook)
-  return nameBook;
-}
+const expectedResult = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien'
+]
 
-assert.strictEqual(smallerName(), 'Duna');
+function fantasyOrScienceFictionAuthors() {
+  return books.filter(author => 
+    author.genre === 'Ficção Científica' || author.genre === 'Fantasia')
+    .map(names => names.author.name).sort()
+}
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);

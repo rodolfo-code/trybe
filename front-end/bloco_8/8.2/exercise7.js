@@ -63,10 +63,12 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = books[0].name
-  books.forEach((element) => element.name.length < nameBook.length? nameBook = element.name: nameBook)
-  return nameBook;
+const expectedResult = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+  return books.filter(book =>  book.author.name.split(' ', 3)
+    .every(element => element.length === 2))
+    .map(book => book.name)[0];
 }
 
-assert.strictEqual(smallerName(), 'Duna');
+assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);

@@ -63,10 +63,13 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = books[0].name
-  books.forEach((element) => element.name.length < nameBook.length? nameBook = element.name: nameBook)
-  return nameBook;
+const expectedResult = false;
+
+function authorUnique() {
+  return books.every((obj) =>
+    !books.some((book) =>
+      (book.author.birthYear === obj.author.birthYear) && (book.author.name !== obj.author.name)
+  ))
 }
 
-assert.strictEqual(smallerName(), 'Duna');
+assert.strictEqual(authorUnique(), expectedResult);

@@ -1,4 +1,4 @@
-const assert = require('assert');
+// const assert = require('assert');
 
 const books = [
   {
@@ -63,10 +63,11 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = books[0].name
-  books.forEach((element) => element.name.length < nameBook.length? nameBook = element.name: nameBook)
-  return nameBook;
-}
+const expectedResult = 43;
 
-assert.strictEqual(smallerName(), 'Duna');
+function averageAge() {
+  const age = books.map(element => element.releaseYear - element.author.birthYear)
+  return age.reduce((acc, curr) => acc + curr) / age.length
+}
+console.log(averageAge())
+// assert.strictEqual(averageAge(), expectedResult);
