@@ -12,7 +12,7 @@ const gunnar = {
     age: 30,
     likes: ["hiking", "scuba diving", "taking pictures"],
     nationality: "Icelandic"
-}
+} 
 
 // complete a assinatura da função abaixo
 const personLikes = ({name, age, likes}) => `${name} is ${age} years old and likes ${likes.join(", ")}.`
