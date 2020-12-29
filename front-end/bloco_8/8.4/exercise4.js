@@ -33,7 +33,7 @@ const bornIn20Century = (year) => year < 2001 && year >= 1900;
 const filterPeople = (array) =>
   array.filter(
     ({ nationality, bornIn }) =>
-      nationality === "Australian" && bornIn20Century(bornIn)
+      nationality === "Australian" && bornIn20Century(bornIn);
   );
 
 const filteredPeople = filterPeople(people);
