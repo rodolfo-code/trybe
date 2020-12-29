@@ -1,9 +1,12 @@
 const assert = require('assert')
+const { Console } = require('console')
 
-// escreva sum abaixo
-const sum = (...varNum) => {
-  return varNum.reduce((acc, curr) => acc + curr, 0)
+const sum = (...array) => {
+  return array.reduce((acc, curr) => {
+    return acc + curr
+  }, 0)
 }
+
 
 assert.strictEqual(sum(), 0)
 assert.strictEqual(sum(1), 1)
