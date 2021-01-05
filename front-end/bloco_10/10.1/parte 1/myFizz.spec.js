@@ -7,4 +7,7 @@ describe('myFizzBuzz', () => {
   it(`returns 'fizz' if the argument is only divisible by 3`, () => {
     expect('fizz').toBe(myFizzBuzz(9));
   });
+  if(`returns 'buzz' if the argument is only divisible by 5`, () => {
+    expect(myFizzBuzz(5)).toBe('buzz');
+  });
 });
