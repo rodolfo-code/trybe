@@ -1,4 +1,3 @@
-const { expect, it } = require('@jest/globals');
 const sum = require('./soma');
 
 describe('SUM', () => {
