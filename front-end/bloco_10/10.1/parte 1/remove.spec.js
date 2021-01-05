@@ -12,7 +12,7 @@ describe('myRemove', () => {
     myRemove(arr, 3);
     expect(arr).toEqual([1, 2, 3, 4]);
   });
-  it('return a expected array', () => {
+  it('returns an expected array', () => {
     expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
   });
 });
