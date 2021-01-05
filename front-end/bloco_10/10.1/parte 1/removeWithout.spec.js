@@ -12,4 +12,7 @@ describe('myRemoveWithoutCopy', () => {
     myRemoveWithoutCopy(arr, 1)
     expect(arr).toEqual([2, 3, 4]);
   });
+  it('returns expected array', () => {
+    expect(myRemoveWithoutCopy([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
+  });
 });
