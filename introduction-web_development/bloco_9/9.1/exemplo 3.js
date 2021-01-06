@@ -1,18 +1,10 @@
-const resultadoFinal = (resultado) => {
-  console.log(resultado);
+const consoleSoma = (parametro) => {
+  console.log(parametro)
 }
 
-const funcSoma = (num1, num2) => {
-  resultadoFinal(num1 + num2);
+const soma = (num1, num2, callback) => {
+  let result = num1 + num2;
+  callback(result)
 }
 
-funcSoma(10, 20)
-
-// OU
-
-const funcSom = (num1, num2, callback) => {
-  let soma = num1 + num2;
-  callback(soma)
-}
-
-funcSom(20, 30, resultadoFinal)
+soma()

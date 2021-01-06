@@ -12,5 +12,7 @@ const getUser = (callback) => {
   return callback(userToReturn)
 };
 
+
 assert.strictEqual(getUser(userFullName), "Hello! My name is Ivan Ivanovich"); // complete a chamada da função de getUser
 assert.strictEqual(getUser(userNationality), "Ivan is Russian"); // complete a chamada da função de getUser
+
