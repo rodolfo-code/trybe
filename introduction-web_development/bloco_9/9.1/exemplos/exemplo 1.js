@@ -8,6 +8,6 @@ setTimeout(() => pushNumber(numbers, 1), 3000);
 pushNumber(numbers, 2);
 pushNumber(numbers, 3);
 
-console.log(numbers)
+setTimeout(() => assert.deepStrictEqual(numbers, [1, 2, 3]), 3000); // essa validação falha
 
-setTimeout(() => assert.deepStrictEqual(numbers, [2, 3, 1]), 3000);
+console.log(numbers)

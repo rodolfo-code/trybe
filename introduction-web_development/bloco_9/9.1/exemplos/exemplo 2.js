@@ -26,12 +26,11 @@ const monthlyBudget = (myIncome, myExpenses, callback) => {
     Saldo: R$${totalAfterExpenses},00 `);
 };
 
-const callback = myExpenses => {
+const handleExpenses = myExpenses => {
   const eachValue = myExpenses.map((item) => Object.values(item)[0]);
+  console.log(eachValue)
   const totalExpense = eachValue.reduce((acc, curr) => acc + curr , 0);
   return totalExpense;
 };
 
-monthlyBudget(myIncome, myExpenses, callback);
-
-console.log(callback(myExpenses))
+monthlyBudget(myIncome, myExpenses, handleExpenses);
