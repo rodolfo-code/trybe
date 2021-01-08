@@ -17,4 +17,17 @@ const execute = () => {
     .catch((msg) => console.log('falhou'));
 };
 
+// async await
+
+const onload = async () => {
+  try {
+    const sum = await promisesSumRandomNumbers()
+    console.log(sum)
+  } catch (error) {
+    console.log('deu ruim' )
+  }
+}
+
+
 execute();
+onload()
