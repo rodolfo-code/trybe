@@ -1,7 +1,7 @@
 const API_URL = 'https://icanhazdadjoke.com/';
 
 const appendJoke = (joke) => {
-  let h2 = document.querySelector('h2');
+  let h2 = document.getElementById('jokeContainer');
   h2.innerHTML = joke
 }
 
