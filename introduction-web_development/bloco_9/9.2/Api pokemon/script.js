@@ -34,6 +34,9 @@ const fetchPokemon = () => {
 
 const getPokemonPromisse = (pokemon) => {
   return new Promise((resolve, reject) => {
+    if (pokemon === 'squirtle') {
+      reject('Esse pokemon não pode estar aqui')
+    } else {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then((response) => {
       response.json()
@@ -42,14 +45,26 @@ const getPokemonPromisse = (pokemon) => {
           resolve();
         })
     })
+  }
   })
 }
 
-const promissePokemon = () => {
-  getPokemonPromisse('pikachu')
-    .then(() => getPokemonPromisse('squirtle'))
-    .then(() => getPokemonPromisse('kakuna'))
-    .then(() => getPokemonPromisse('charizard '))
+// const promissePokemon = () => {
+//   getPokemonPromisse('pikachu')
+//     .then(() => getPokemonPromisse('squirtle'))
+//     .then(() => getPokemonPromisse('kakuna'))
+//     .then(() => getPokemonPromisse('charizard '))
+// }
+
+const promissePokemon = async () => {
+  try {
+    await getPokemonPromisse('pikachu');
+    await getPokemonPromisse('kakuna');
+    await getPokemonPromisse('squirtle');
+    await getPokemonPromisse('charizard');
+  } catch (error) {
+    console.log(error);
+  }  
 }
 
 window.onload = promissePokemon();
