@@ -17,4 +17,16 @@ const execute = () => {
     .catch((msg) => console.log(`É mais de oito mil! Essa promise deve estar quebrada!`));
 };
 
+// async await
+
+const onload = async () => {
+  try {
+    const sum = await promisesSumRandomNumbers()
+    console.log(sum)
+  } catch (error) {
+    console.log('deu ruim' )
+  }
+}
+
 execute();
+onload();
