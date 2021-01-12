@@ -1,8 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import "./App.css";
 
-function App() {
-  return (<span>Ola mundo</span>);
-}
+const tarefas = ["Acordar", "Tomar café", "Escovar os dentes", "Ir trabalhar"];
 
-export default App;
+const app = () => (
+  <ul>
+    {tarefas.map((tarefa) => (
+      <li>{tarefa}</li>
+    ))}
+  </ul>
+);
+
+export default app;

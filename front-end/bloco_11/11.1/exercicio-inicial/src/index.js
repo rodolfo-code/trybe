@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Cab from './header';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Cab />
   </React.StrictMode>,
   document.getElementById('root')
 );
