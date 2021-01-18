@@ -55,7 +55,7 @@ class ManyButtons extends React.Component {
         <button onClick={this.consoleString}>{this.state.numeroDeCliques}</button>
         <button onClick={this.console2}>{this.state.numeroDePassadas}</button>
         <button onClick={this.button3}>{this.state.numeroCliques - 1}</button>
-        <button onClick={this.buttonClear}>Limpou Tudo?</button>
+        <button onClick={this.buttonClear}>Limpa Tudo</button>
         <div>
           {this.state.novoElemento}
         </div>
