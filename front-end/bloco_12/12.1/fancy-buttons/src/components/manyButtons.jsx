@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 
 
@@ -13,7 +14,8 @@ class ManyButtons extends React.Component {
       numeroDeCliques: 0,
       numeroDePassadas: 0,
       numeroCliques: 1,
-      novoElemento: ''
+      novoElemento: '',
+      divColor: { background: 'green' }
     }
   }
 
@@ -44,21 +46,31 @@ class ManyButtons extends React.Component {
     }))
   }
 
-  colorirTexto() {
+  // this.state.divColor
 
+  colorirTexto() {
+    if(this.state.numeroDeCliques % 2 === 0) {
+      const divStyle = {
+        background: 'green'
+      };
+      return divStyle
+    }
   }
+
 
   render() {
     console.log(this)
+    console.log(this.state.color)
     return (
       <div>
-        <button onClick={this.consoleString}>{this.state.numeroDeCliques}</button>
+        <button onClick={this.consoleString} style={this.colorirTexto()}>{this.state.numeroDeCliques}</button>
         <button onClick={this.console2}>{this.state.numeroDePassadas}</button>
         <button onClick={this.button3}>{this.state.numeroCliques - 1}</button>
         <button onClick={this.buttonClear}>Limpa Tudo</button>
         <div>
           {this.state.novoElemento}
         </div>
+        {/* <span>{this.colorirTexto()} porra</span> */}
       </div>
       
     )
