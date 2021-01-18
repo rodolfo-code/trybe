@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
+import '../components/App.css';
 
 
 
@@ -23,6 +24,7 @@ class ManyButtons extends React.Component {
     this.setState((estadoAnterior, _props) => ({
       numeroDeCliques: estadoAnterior.numeroDeCliques + 1
     }))
+    console.log(this.state.divColor.background)
   }
 
   console2() {
@@ -42,7 +44,7 @@ class ManyButtons extends React.Component {
       numeroDeCliques: estadosAnteriores.numeroDeCliques = 0,
       numeroCliques: estadosAnteriores.numeroCliques = 1,
       numeroDePassadas: estadosAnteriores.numeroDePassadas = 0,
-      novoElemento: <span><b>Eu amo React</b></span>
+      novoElemento: <span className='text'><b>Eu amo React</b></span>
     }))
   }
 
@@ -50,17 +52,13 @@ class ManyButtons extends React.Component {
 
   colorirTexto() {
     if(this.state.numeroDeCliques % 2 === 0) {
-      const divStyle = {
-        background: 'green'
-      };
+      const divStyle = this.state.divColor
       return divStyle
     }
   }
 
 
   render() {
-    console.log(this)
-    console.log(this.state.color)
     return (
       <div>
         <button onClick={this.consoleString} style={this.colorirTexto()}>{this.state.numeroDeCliques}</button>
