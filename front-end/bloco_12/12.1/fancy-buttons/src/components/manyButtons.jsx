@@ -1,18 +1,26 @@
 import React from 'react';
 
-function consoleString() {
-  console.log('React é lindo')
-}
-function console2() {
-  console.log('React é maravilhoso')
-}
+
 
 class ManyButtons extends React.Component {
+  constructor() {
+    super()
+    this.consoleString = this.consoleString.bind(this)
+    this.state = {
+      numeroDeCliques: 0
+    }
+  }
+
+  consoleString() {
+    this.setState((estadoAnterior, _props) => ({
+      numeroDeCliques: estadoAnterior.numeroDeCliques + 1
+    }))
+  }
   render() {
+    console.log(this)
     return (
       <div>
-        <button onClick={consoleString}>Clique</button>
-        <button onMouseOver={console2}>Coloque o mouse sobre</button>
+        <button onClick={this.consoleString}>{this.state.numeroDeCliques}</button>
       </div>
     )
   }
