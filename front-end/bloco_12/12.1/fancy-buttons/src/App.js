@@ -1,4 +1,3 @@
-import './App.css';
 import RenderButton from './components/button';
 
 
