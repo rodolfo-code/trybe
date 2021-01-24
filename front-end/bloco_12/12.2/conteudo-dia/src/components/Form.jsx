@@ -53,35 +53,36 @@ class Form extends Component {
           <legend>Formulário:</legend>
           <form>
             <InputState value={estadoFavorito} handleState={handleChange} />
-            <br />
+            <br/>
             <InputName value={name} handleName={handleChange} />
-            <br />
+            <br/>
             <InputEmail value={email} handleEmail={handleChange} />
-            <br />
+            <br/>
             <InputIdade value={idade} handleIdade={handleChange} />
-            <br />
-            <InputCheckBox
-              value={vaiComparecer}
-              handleCheckBox={handleChange}
-            />
-            <br />
-            <SelectWord value={palavraChave} handleSelect={handleChange} />
-            <br />
-            <br />
+            <br/>
+            <InputCheckBox value={vaiComparecer} handleCheckBox={handleChange} />
+            <br/>
+            <SelectWord  value={palavraChave} handleSelect={handleChange}/>
+            <br/>        
           </form>
           <form onSubmit={this.handleFile}>
-            <label>
-              Arquivo:
-              <input type="file" name="escolhaUmArquivo" ref={this.inputFile} />
-            </label>
-            <br />
-            <br />
-            <button type="submit">Enviar</button>
-            <h1>{this.state.nomeDoArquivo}</h1>
+              <label>
+                Arquivo:
+                <input 
+                  type="file" 
+                  name="escolhaUmArquivo"
+                  ref={this.inputFile}
+                />
+              </label>
+              <br/>
+              <br/>
+              <button type="submit">Enviar</button>
+              <h1>{this.state.nomeDoArquivo}</h1>
           </form>
-        </fieldset>
+          
+          </fieldset>
       </div>
-    );
+    )
   }
 }
 
