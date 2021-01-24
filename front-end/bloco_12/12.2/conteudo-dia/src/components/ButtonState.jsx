@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-class Button extends Component {
+class ButtonState extends Component {
   render() {
-    const { handleChange } = this.props
+    const { handleChange, value } = this.props
     return (
       <label>
         Diga seu estado favorito!
         <textarea
           name="estadoFavorito"
-          value={this.state.estadoFavorito}
+          value={value}
           onChange={handleChange}
         />
       </label>
@@ -16,4 +16,4 @@ class Button extends Component {
   }
 }
 
-export default Button;
+export default ButtonState;

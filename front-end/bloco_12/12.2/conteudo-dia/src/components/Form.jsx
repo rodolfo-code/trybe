@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from './Button';
+import ButtonState from './ButtonState';
 
 class Form extends Component {
   constructor() {
@@ -37,13 +37,15 @@ class Form extends Component {
   }
   
   render() {
+    const {estadoFavorito, name, email, idade, vaiComparecer, palavraChave, nomeDoArquivo} = this.state
+
     return (
       <div>
         <h1>Vamo começar a testar forms!</h1>
         <fieldset>
           <legend>Formulário:</legend>
           <form>
-            <Button handleChange={this.handleChange}/>
+            <ButtonState value={estadoFavorito} handleChange={this.handleChange} />
             <label>
               Name:
               <input 
