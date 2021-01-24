@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+
+import InputCheckBox from './InputCheckBox';
 import InputEmail from './InputEmail';
 import InputIdade from './InputIdade';
 import InputName from './InputName';
 import InputState from './InputState';
+import SelectWord from './Select';
 
 class Form extends Component {
   constructor() {
@@ -50,60 +53,35 @@ class Form extends Component {
           <legend>Formulário:</legend>
           <form>
             <InputState value={estadoFavorito} handleState={handleChange} />
-            <br/>
+            <br />
             <InputName value={name} handleName={handleChange} />
-            <br/>
+            <br />
             <InputEmail value={email} handleEmail={handleChange} />
-            <br/>
-            
-            <InputIdade value={idade} handleIdade={handleChange} />  
-            <div>
-              <label>
-                Vai comparecer à conferência? 
-                <input 
-                  type="checkbox" 
-                  name="vaiComparecer" 
-                  value={this.state.vaiComparecer}
-                  onChange={this.handleChange}
-                />
-              </label>            
-            </div>
-            <br/>
-            <label>
-              Escolha sua palavra chave:
-              <select 
-                  name="palavraChave" 
-                  value={this.state.palavraChave} 
-                  onChange={this.handleChange}
-                >
-                <option value="estado">Estado</option>
-                <option value="evento">Eventos</option>
-                <option value="porps">Props</option>
-                <option value="hooks">Hooks</option>
-              </select>
-            </label>
-            <br/>
-            <br/>
-            
+            <br />
+            <InputIdade value={idade} handleIdade={handleChange} />
+            <br />
+            <InputCheckBox
+              value={vaiComparecer}
+              handleCheckBox={handleChange}
+            />
+            <br />
+            <SelectWord value={palavraChave} handleSelect={handleChange} />
+            <br />
+            <br />
           </form>
           <form onSubmit={this.handleFile}>
-              <label>
-                Arquivo:
-                <input 
-                  type="file" 
-                  name="escolhaUmArquivo"
-                  ref={this.inputFile}
-                />
-              </label>
-              <br/>
-              <br/>
-              <button type="submit">Enviar</button>
-              <h1>{this.state.nomeDoArquivo}</h1>
-            </form>
-          
-          </fieldset>
+            <label>
+              Arquivo:
+              <input type="file" name="escolhaUmArquivo" ref={this.inputFile} />
+            </label>
+            <br />
+            <br />
+            <button type="submit">Enviar</button>
+            <h1>{this.state.nomeDoArquivo}</h1>
+          </form>
+        </fieldset>
       </div>
-    )
+    );
   }
 }
 
