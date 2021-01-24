@@ -55,10 +55,9 @@ class Form extends Component {
             <br/>
             <InputEmail value={email} handleEmail={handleChange} />
             <br/>
-            <div>
+            
             <InputIdade value={idade} handleIdade={handleChange} />  
-              <br/>
-              <br/>
+            <div>
               <label>
                 Vai comparecer à conferência? 
                 <input 
