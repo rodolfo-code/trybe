@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import ButtonState from './ButtonState';
+import InputEmail from './InputEmail';
+import InputIdade from './InputIdade';
+import InputName from './InputName';
+import InputState from './InputState';
 
 class Form extends Component {
   constructor() {
@@ -38,6 +41,7 @@ class Form extends Component {
   
   render() {
     const {estadoFavorito, name, email, idade, vaiComparecer, palavraChave, nomeDoArquivo} = this.state
+    const { handleChange} = this
 
     return (
       <div>
@@ -45,41 +49,15 @@ class Form extends Component {
         <fieldset>
           <legend>Formulário:</legend>
           <form>
-            <ButtonState value={estadoFavorito} handleChange={this.handleChange} />
-            <label>
-              Name:
-              <input 
-                type="text" 
-                name='name' 
-                value={this.state.name}
-                onChange={this.handleChange}
-              />
-            </label>
+            <InputState value={estadoFavorito} handleState={handleChange} />
             <br/>
+            <InputName value={name} handleName={handleChange} />
             <br/>
-            <label>
-              Email:
-              <input 
-                type="email" 
-                name="email"
-                value={this.state.email} 
-                onChange={this.handleChange}
-              />
-            </label>
+            <InputEmail value={email} handleEmail={handleChange} />
             <br/>
-            <br/>
+            
+            <InputIdade value={idade} handleIdade={handleChange} />  
             <div>
-              <label>
-                Idade:
-                <input 
-                  type="number" 
-                  name="idade"
-                  value={this.state.idade}
-                  onChange={this.handleChange}
-                />
-              </label>
-              <br/>
-              <br/>
               <label>
                 Vai comparecer à conferência? 
                 <input 
