@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import InputEmail from './InputEmail';
+import InputIdade from './InputIdade';
 import InputName from './InputName';
 import InputState from './InputState';
 
@@ -48,30 +50,13 @@ class Form extends Component {
           <legend>Formulário:</legend>
           <form>
             <InputState value={estadoFavorito} handleState={handleChange} />
+            <br/>
             <InputName value={name} handleName={handleChange} />
             <br/>
-            <br/>
-            <label>
-              Email:
-              <input 
-                type="email" 
-                name="email"
-                value={this.state.email} 
-                onChange={this.handleChange}
-              />
-            </label>
-            <br/>
+            <InputEmail value={email} handleEmail={handleChange} />
             <br/>
             <div>
-              <label>
-                Idade:
-                <input 
-                  type="number" 
-                  name="idade"
-                  value={this.state.idade}
-                  onChange={this.handleChange}
-                />
-              </label>
+            <InputIdade value={idade} handleIdade={handleChange} />  
               <br/>
               <br/>
               <label>
