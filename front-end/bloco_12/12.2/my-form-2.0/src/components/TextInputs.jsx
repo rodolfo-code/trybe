@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 
 class InputRender extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  // handleOnChange() {
-  //   const {}
-  //   if(this.props.nome === 'Nome') 
-  //   if(name === 'address') value = this.validateAddress(value)
-  // }
-
+  
+ 
   render() {
     const { textToUpper, validateAddress } =this.props
     const { nome, type, limite, campoObrigatório} = this.props.fields
