@@ -29,13 +29,6 @@ const fields = [
     limite: 28,
     campoObrigatório: 'required'
   },
-  // {
-  //   type: ,
-  //   nome: ,
-  //   limite: ,
-  //   campoObrigatório: 
-  // },
-
 ]
 
 export default fields
