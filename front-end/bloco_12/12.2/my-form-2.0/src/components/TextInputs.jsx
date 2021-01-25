@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 class InputRender extends Component {
-  
- 
+   
   render() {
     const { textToUpper, validateAddress } =this.props
     const { nome, type, limite, campoObrigatório} = this.props.fields
