@@ -34,6 +34,13 @@ class Form extends Component {
             />
           )}
 
+          <label>
+            Estado:
+            <select>
+              
+            </select>
+          </label>
+
       </fieldset>
       </form>
     )
