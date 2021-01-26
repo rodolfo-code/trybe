@@ -1,0 +1,11 @@
+node_modules/
+*.gif
+*.png
+*.jpg
+*.jpeg
+tmp
+temp
+*.tmp
+*.temp
+*.log
+
