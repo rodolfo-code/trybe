@@ -7,7 +7,6 @@ const computer = (computador) => {
   li.innerHTML = computador
   ol.appendChild(li)
   console.log(ol)
-
 }
 
 //computer()
@@ -20,13 +19,10 @@ const computer = (computador) => {
 */
 
 const desafio = async () => {
-  fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
+  await fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
     .then((response) => {response.json()
       .then((data) => data.results.map(title => computer(title.title)))
     })    
 };
-
-
-// desafio();
 
 window.onload = desafio();
