@@ -14,4 +14,4 @@ const desafio = async () => {
     });
 };
 
-desafio();
+console.log(desafio())
