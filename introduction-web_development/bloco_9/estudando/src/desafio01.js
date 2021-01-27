@@ -7,7 +7,6 @@ const computer = (computador) => {
   li.innerHTML = computador
   ol.appendChild(li)
   console.log(ol)
-
 }
 
 //computer()
@@ -25,8 +24,5 @@ const desafio = async () => {
       .then((data) => data.results.map(title => computer(title.title)))
     })    
 };
-
-
-// desafio();
 
 window.onload = desafio();
