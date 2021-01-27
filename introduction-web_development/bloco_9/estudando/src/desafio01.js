@@ -19,7 +19,7 @@ const computer = (computador) => {
 */
 
 const desafio = async () => {
-  fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
+  await fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
     .then((response) => {response.json()
       .then((data) => data.results.map(title => computer(title.title)))
     })    
