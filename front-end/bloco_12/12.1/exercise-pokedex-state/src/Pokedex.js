@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 
 import Pokemon from "./Pokemon";
 import Button from "./Button";
 
-class Pokedex extends React.Component {
+class Pokedex extends Component {
   constructor(props) {
     super(props);
     const { pokemons } = this.props;
