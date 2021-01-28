@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import './App.css';
 import '../components/App.css';
 
 
 
-class ManyButtons extends React.Component {
+class ManyButtons extends Component {
   constructor() {
     super()
     this.consoleString = this.consoleString.bind(this)
