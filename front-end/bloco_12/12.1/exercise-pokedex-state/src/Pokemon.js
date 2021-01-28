@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-class Pokemon extends React.Component {
+class Pokemon extends Component {
   render() {
     const { name, type, averageWeight, image } = this.props.pokemon;
 
