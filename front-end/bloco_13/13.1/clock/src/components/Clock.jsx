@@ -43,7 +43,6 @@ class Clock extends Component {
             showTime && <span className='data'>{currentDate.toLocaleTimeString()}</span>
           }
         </div>
-        
       </div>
     )
   }
