@@ -32,7 +32,6 @@ class App extends Component {
             : <span>Clique para ver a hora</span>
           }
           <div className='button-class'>
-          
             <Button variant="contained" color="primary" type='button' onClick={ this.turnOffButton }>Clique</Button>
           </div>
         </header>
