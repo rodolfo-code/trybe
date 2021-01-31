@@ -29,7 +29,7 @@ class App extends Component {
         <header className="App-header">
           {showTime ? 
             <Clock turnOffButton={ this.turnOffButton } showTime={ showTime }/>
-            : <span>Clique para ver a hora</span>
+            : <span>Clique para ver as horas</span>
           }
           <div className='button-class'>
             <Button variant="contained" color="primary" type='button' onClick={ this.turnOffButton }>Clique</Button>
