@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ManyButtons from './manyButtons';
 
 
-class RenderButton extends React.Component {
+class RenderButton extends Component {
   render() {
     return (
       <ManyButtons />
