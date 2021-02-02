@@ -1,0 +1,3 @@
+[submodule "front-end/bloco_13/exercise-dog-image"]
+	path = front-end/bloco_13/exercise-dog-image
+	url = git@github.com:rodolfo-code/exercise-dog-image.git
