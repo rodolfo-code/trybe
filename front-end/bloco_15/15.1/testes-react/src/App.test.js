@@ -22,7 +22,11 @@ test('Verificando se existe botão', () => {
 })
 
 test('Checks if there is a send button.', () => {
-  
+  const { getByTestId } = render(<App />);
+  const btn = getByTestId('id-send');
+   expect(btn).toBeInTheDocument();
+   expect(btn.type).toBe('button');
+   expect(btn).toHaveValue('Enviar')
 })
 
 test('Verifica de valor do Button é igual a Enviar.', () => {
