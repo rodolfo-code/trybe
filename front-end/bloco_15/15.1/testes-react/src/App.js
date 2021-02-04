@@ -18,6 +18,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <div className="App">
+        <label htmlFor="id-email">
+          Email
+        </label>
+        <input id="id-email" type="email" />
+      </div>
     </div>
   );
 }
