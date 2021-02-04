@@ -4,7 +4,7 @@ class Doze1 extends Component {
   render() {
     return (
       <main>
-        <h1>Componentes com estado - Gabarito</h1>
+        <h1>Componentes com estado</h1>
         <section>
           <h3>Gabarito dos exercícios</h3>
           <ol>
