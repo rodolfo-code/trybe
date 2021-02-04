@@ -22,7 +22,9 @@ function App() {
         <label htmlFor="id-email">
           Email
         </label>
-        <input id="id-email" type="email" />
+        <input data-testid="id-email" type="email" />
+        <input id='btn-send' type='button' data-testid='id-send' value='Enviar' />
+        <input id="btn-back" type="button" value="Voltar" />
       </div>
     </div>
   );
