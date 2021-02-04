@@ -41,10 +41,10 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [x] 5-1: _JavaScript - DOM e seletores_ :heavy_check_mark:
 - [x] 5-2: _JavaScript - Trabalhando com elementos_ :heavy_check_mark:
-- [ ] 5-3: _JavaScript - Eventos_ :heavy_check_mark:
-- [ ] 5-4: _JavaScript - Web Storage_ :heavy_check_mark:
-- [ ] 5-5: _[Projeto - Meme Generator](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
-- [ ] 5-6: _[Projeto - Arte com Pixels](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
+- [x] 5-3: _JavaScript - Eventos_ :heavy_check_mark:
+- [x] 5-4: _JavaScript - Web Storage_ :heavy_check_mark:
+- [x] 5-5: _[Projeto - Meme Generator](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
+- [x] 5-6: _[Projeto - Arte com Pixels](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
 - [ ] 5-7: _[Projeto - Lista de tarefas](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
 - [ ] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
 - [ ] 5-7: _[Projeto - Carta Misteriosa](https://github.com/rodolfo-code/trybe)_ :heavy_check_mark:
@@ -105,12 +105,12 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 13-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [ ] 13-2: _Ciclo de vida de componentes em React_
 - [ ] 13-3: _React Router_
-- [ ] 13-4: _[Projeto - Movie Cards Library CRUD](https://github.com/rodolfo-code/trybe)_
+- [ x] 13-4: _[Projeto - Movie Cards Library CRUD](https://github.com/rodolfo-code/trybe)_
 
 ##### Bloco 14: Metodologias Ágeis :hourglass_flowing_sand:
 
-- [ ] 14-1: _Metodologias Ágeis_
-- [ ] 14-2: _[Projeto - Frontend Online Store](https://github.com/rodolfo-code/trybe)_
+- [x] 14-1: _Metodologias Ágeis_:heavy_check_mark:
+- [x] 14-2: _[Projeto - Frontend Online Store](https://github.com/rodolfo-code/trybe)_:heavy_check_mark:
 
 ##### Bloco 15: Testes em React :hourglass_flowing_sand:
 
