@@ -6,6 +6,8 @@ import LiveLectures from '../pages/LiveLectures';
 import Solutions from '../pages/Solutions';
 import TrybeTalks from '../pages/TrybeTalks';
 import Doze2 from '../pages/subPages/Doze2';
+import Treze1 from '../pages/subPages/Treze1';
+import Treze2 from '../pages/subPages/Treze2';
 
 class Content extends Component {
   constructor(props) {
@@ -35,8 +37,12 @@ class Content extends Component {
               <Solutions {...props} availableSolutions={ this.availableSolutions } />
               )} 
               />
+
           <Route path='/solutions/12.1' component={ Doze1 } />
           <Route path='/solutions/12.2' component={ Doze2 } />
+
+          <Route path='/solutions/13.1' component={ Treze1 }/>
+          <Route path='/solutions/13.2' component={ Treze2 }/>
         </Switch>
       </main>
     )
