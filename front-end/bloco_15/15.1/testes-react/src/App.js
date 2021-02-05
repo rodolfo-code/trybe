@@ -39,8 +39,9 @@ export default class App extends Component {
     const { email, saveEmail } = this.state;
     return (
       <div className="App">
-        <label htmlFor="id-email" data-testid="input-email" />
+        <label htmlFor="id-email" data-testid="input-email">
         Email
+        </label>
         <input
           id="id-email"
           value={email}
