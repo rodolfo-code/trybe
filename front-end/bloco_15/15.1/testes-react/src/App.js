@@ -1,33 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.changeEmail = this.changeEmail.bind(this)
+    this.saveEmail = this.saveEmail.bind(this)
+    
+    this.state = {
+      email: '',
+      saveEmail: '',
+    }
+  }
+
+  changeEmail(event) {
+    this.setState({
+      email: event.target.value,
+    })
+  }
+
+  saveEmail() {
+    this.setState({
+      saveEmail: this.state.email,
+      email: '',
+    })
+  }
+
+  render() {
+    const { email, saveEmail } = this.state;
+    return (
       <div className="App">
-        <label htmlFor="id-email">
-          Email
-        </label>
-        <input data-testid="id-email" type="email" />
-        <input id='btn-send' type='button' data-testid='id-send' value='Enviar' />
-        <input id="btn-back" type="button" value="Voltar" />
+        <label htmlFor='id-email'>Insira seu email:</label>    
+        <input id="id-email" type='email' value={ email } onChange={ this.changeEmail } />
+        <input id="btn-enviar" type='button' data-testid="id-send" value='Salvar' onClick={ this.saveEmail }/>
+        <section>
+          <h1 data-testid="id-email-user">{`Valor: ${saveEmail}` }</h1>
+        </section>
+
       </div>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;
