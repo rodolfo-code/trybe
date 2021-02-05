@@ -49,7 +49,7 @@ describe('Tela de inserção do email.', () => {
 
     // Fazer o teste
     expect(emailInput.value).toBe('')
-    expect(userEmail).toBe('Valor: rod.vgo@gamil.com')
+    expect(userEmail.textContent).toBe('Valor: rod.vgo@gmail.com')
   })
 
 })
