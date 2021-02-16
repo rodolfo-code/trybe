@@ -23,9 +23,9 @@ function Todo(props) {
         <button className="btn btn-success ml-5" onClick={isComplete}>
           <i className="fa fa-check"></i>
         </button>
-        <button className="btn btn-warning ml-2">
+        {/* <button className="btn btn-warning ml-2">
           <i className="fa fa-pencil"></i>
-        </button>
+        </button> */}
         <button className="btn btn-danger ml-2" onClick={removeTodo}>
           <i className="fa fa-trash"></i>
         </button>
