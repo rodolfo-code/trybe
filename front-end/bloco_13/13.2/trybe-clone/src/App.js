@@ -12,6 +12,7 @@ class App extends Component {
         <div>
           <Header />
           <Content />
+          <p>Bem vindo a trybe</p>
         </div>
       </Router>
     )
