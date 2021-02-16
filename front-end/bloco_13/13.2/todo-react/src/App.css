@@ -15,5 +15,19 @@ html, body {
 .todo-app {
   border: solid 2px black;
   padding: 15px;
-  
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  margin: 128px auto;
+  border-radius: 10px;
+  min-height: 600px;
+  width: 520px;
+}
+
+h1 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+  /* display: flex;
+  justify-content: center; */
 }
