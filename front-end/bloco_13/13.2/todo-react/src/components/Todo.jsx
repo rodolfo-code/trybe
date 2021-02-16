@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Todo.css";
 
 function Todo(props) {
   const { removeTodo } = props;
+
+  const [complete, setComplete] = useState(false)
+
+  function isComplete() {
+    setComplete(!complete)
+  }
+
+  const style = {
+    textDecorationLine: 'line-through',
+    opacity: 0.4
+  }
+  
   return (
     <li className="list">
-      <div>{props.children}</div>
+      <div style={complete? style : {}}>
+        {props.children}</div>
       <div>
-        <button className="btn btn-success ml-5">
+        <button className="btn btn-success ml-5" onClick={isComplete}>
           <i className="fa fa-check"></i>
         </button>
         <button className="btn btn-warning ml-2">
