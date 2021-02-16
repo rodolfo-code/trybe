@@ -45,7 +45,7 @@ function TodoForm() {
         onClick={handleClick}
         disabled={!input && true}
       >
-        Add Task
+        <i className="fa fa-list"></i>
       </button>
       <div className="todo-list">
         <TodoList 
