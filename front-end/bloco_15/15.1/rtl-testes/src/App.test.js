@@ -18,3 +18,11 @@ test('2 - Verifica se há botões', () => {
   // Fazer os testes
   expect(button.length).toBe(2)
 })
+
+test('3 - Verifica se há botão com id específico', () => {
+  const { getByTestId } = render(<App/>);
+  const button = getByTestId('id-send')
+
+  expect(button).toBeInTheDocument();
+  expect(button).toHaveValue('Salvar')
+})
