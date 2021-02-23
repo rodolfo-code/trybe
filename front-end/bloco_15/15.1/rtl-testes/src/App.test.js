@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
 test('1 - Verifica que há campo input de email na tela', () => {
