@@ -8,26 +8,45 @@ class App extends Component {
 
     this.state = {
       listTodo: [],
+      selectedTodo: null,
     };
 
     this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
+    this.selectTodo = this.selectTodo.bind(this);
   }
 
   addTodo(todo) {
     this.setState((state) => ({ listTodo: [...state.listTodo, todo] }));
   }
 
+  removeTodo() {
+    const { listTodo, selectedTodo } = this.state;
+    this.setState({listTodo: listTodo.filter(task => task !== selectedTodo)})
+    this.setState({selectedTodo: null,})
+  }
+
+  selectTodo(selectedTodo) {
+    this.setState({
+      selectedTodo,
+    })
+  }
+
   render() {
-    const { listTodo } = this.state;
+    const { listTodo, selectedTodo } = this.state;
     return (
       <div className="App">
-        <InputTodo addTodo={(todo) => this.addTodo(todo)} />
+        <InputTodo
+          addTodo={(todo) => this.addTodo(todo)}
+          stateBtn={!selectedTodo && true}
+          removeTodo={this.removeTodo}
+        />
         {listTodo &&
           <ul>
             {
               listTodo.map((todo, index) => (
                 <li key={index + 1}>
-                  <Item content={todo} />
+                  <Item content={todo} selectTodo={todo => this.selectTodo(todo)}/>
                 </li>
               ))
             }

@@ -21,7 +21,8 @@ class InputTodo extends Component {
   }
 
   render() {
-    const { addTodo } = this.props;
+    const { addTodo, stateBtn, removeTodo } = this.props;
+    
     const { textTodo } = this.state;
     return (
       <div className="InputTodo">
@@ -33,6 +34,13 @@ class InputTodo extends Component {
           onChange={(e) => this.changeTextTodo(e.target.value)}
         />
         <input id="btnAdd" type="button" value="Adicionar" onClick={() => this.addItem(textTodo,addTodo)} />
+        <input
+          data-testid='id-remove'
+          type='button'
+          value='Remover'
+          disabled={stateBtn}
+          onClick={() => removeTodo()}
+        />
       </div>
     );
   }
