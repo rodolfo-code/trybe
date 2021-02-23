@@ -24,4 +24,5 @@ describe('2 - Testando funcionalidades do botão', () => {
     fireEvent.click(button)
     expect(queryByText('Almoçar')).toBeInTheDocument();
   })
+  
 })
