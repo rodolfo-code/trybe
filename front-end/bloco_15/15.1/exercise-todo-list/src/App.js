@@ -23,7 +23,7 @@ class App extends Component {
   removeTodo() {
     const { listTodo, selectedTodo } = this.state;
     this.setState({listTodo: listTodo.filter(task => task !== selectedTodo)})
-    this.setState({selectedTodo: null,})
+    this.setState({selectedTodo: '',})
   }
 
   selectTodo(selectedTodo) {
