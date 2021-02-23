@@ -13,7 +13,6 @@ function Email() {
     setEmail(email = '')
   }
 
-  console.log(change)
   return (
     <div>
       <label htmlFor="user-email">
@@ -22,7 +21,7 @@ function Email() {
       <input type="email" value={change} id='user-email' onChange={e => setChange(change = e.target.value)} />
       <input type="button" data-testid="id-send" onClick={handleClick} value="Salvar"/>
       <input type="button" data-testid="id-clear" value="Limpar" onClick={handleClear}/>
-      <h2>
+      <h2 data-testid='id-email-user'>
         Valor: {email}
       </h2>
     </div>
