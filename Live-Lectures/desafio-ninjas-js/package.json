@@ -1,0 +1,29 @@
+{
+  "name": "desafio-ninjas-js",
+  "version": "0.1.0",
+  "description": "Desafio Ninjas do JavaScript Trybe.",
+  "main": "index.js",
+  "author": "Viviane Florido <vivianeflowt@gmail.com>",
+  "scripts": {
+    "lint": "npx eslint --fix --no-inline-config --no-ignore  ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryber/desafio-ninjas-js.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tryber/desafio-ninjas-js/issues"
+  },
+  "homepage": "https://github.com/tryber/desafio-ninjas-js#readme",
+  "devDependencies": {
+    "eslint": "7.19.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.22.1",
+    "prettier": "2.2.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
