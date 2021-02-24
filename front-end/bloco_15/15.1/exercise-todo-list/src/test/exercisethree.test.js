@@ -27,5 +27,14 @@ describe('Testando funcionalidade de apagar item selecionado', () => {
     fireEvent.click(btnRemove);
     expect(btnRemove.disabled).toBe(true);
     expect(queryByText('Exercitar')).not.toBeInTheDocument();
+
+    const selectTask2 = getByText('Estudar');
+    expect(btnRemove.disabled).toBe(true);
+    expect(selectTask2).toBeInTheDocument();    
+    fireEvent.click(selectTask2)
+    expect(btnRemove.disabled).toBe(false);
+    fireEvent.click(btnRemove);
+    expect(btnRemove.disabled).toBe(true);
+    expect(selectTask2).not.toBeInTheDocument();
   })
 });
