@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function InputName() {
   return (
@@ -8,4 +8,4 @@ function InputName() {
   )
 }
 
-export default InputName
+export default InputName;

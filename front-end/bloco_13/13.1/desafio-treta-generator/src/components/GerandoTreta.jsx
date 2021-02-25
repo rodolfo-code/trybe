@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function GerandoTreta() {
   return (
@@ -8,4 +8,4 @@ function GerandoTreta() {
   )
 }
 
-export default GerandoTreta
+export default GerandoTreta;

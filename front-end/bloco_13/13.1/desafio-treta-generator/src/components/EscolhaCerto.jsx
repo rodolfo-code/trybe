@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function EscolhaCerto() {
   return (
@@ -8,4 +8,4 @@ function EscolhaCerto() {
   )
 }
 
-export default EscolhaCerto
+export default EscolhaCerto;
