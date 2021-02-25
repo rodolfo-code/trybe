@@ -11,7 +11,6 @@ class App extends Component {
       <Router>
         <div className="app">
           <Routes />
-          Vamo la
         </div>
       </Router>
     );

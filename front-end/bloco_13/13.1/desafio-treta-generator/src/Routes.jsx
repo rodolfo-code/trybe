@@ -9,7 +9,7 @@ import InputName from './components/InputName';
 function Routes() {
   return (
     <Switch>
-      <Route path='/' render={InputName}/>
+      <Route exact path='/' render={InputName}/>
       <Route path='/preferencia' render={EscolhaCerto} />
       <Route path='/comida' render={EscolhaPior} />
       <Route path='/animal' render={EscolhaAnimal} />
