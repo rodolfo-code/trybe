@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function EscolhaAnimal() {
   return (
@@ -8,4 +8,4 @@ function EscolhaAnimal() {
   )
 }
 
-export default EscolhaAnimal
+export default EscolhaAnimal;
