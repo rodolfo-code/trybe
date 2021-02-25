@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import cookieMonster from './images/cookieMonster.jpg';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import './App.css';
+import Routes from './Routes';
 
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <h1>THE TRETA HAS BEGUN!</h1>
-        <img src={cookieMonster} alt="o certo é bolacha"/>
-      </div>
+      <Router>
+        <div className="app">
+          <Routes />
+          Vamo la
+        </div>
+      </Router>
     );
   }
 }
