@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
 function NextButton(props) {
-  const { handleClick } = props;
+  const { handleClick, redirect } = props;
   return (
     <Container className='button'>
-      <Link to='/preferencia' className='btn btn-primary' onClick={() => handleClick()}>Próxima</Link>
+      <Link to={redirect}className='btn btn-primary' onClick={() => handleClick()}>Próxima</Link>
     </Container>
   )
 }
