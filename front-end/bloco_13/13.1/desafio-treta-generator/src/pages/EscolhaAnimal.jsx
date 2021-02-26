@@ -3,7 +3,7 @@ import React from 'react';
 function EscolhaAnimal() {
   return (
     <div>
-      Escolha animal gato, cachorro
+      <p>Rodolfo</p>
     </div>
   )
 }
