@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
 function GerandoTreta(props) {
@@ -19,6 +20,7 @@ function GerandoTreta(props) {
           E ainda complementou que ${conditional()} e que nem seu ${animal} come!`}
         </p>
       </Container>
+      <Link to="/" className="btn btn-outline-primary">Inicio</Link>
     </>
   )
 }
