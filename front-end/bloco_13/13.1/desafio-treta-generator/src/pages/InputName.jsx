@@ -10,6 +10,7 @@ function InputName(props) {
     <h1><strong>Digite um nome:</strong></h1>
       <Container>
         <Input type="text" name="text" id="name" value={input} onChange={(e) => handleChange(e.target.value)} />
+        <hr/>
         <NextButton handleClick={handleClick} redirect={redirect} />
       </Container>
     </>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
+import InputName from './InputName';
 import EscolhaCerto from './EscolhaCerto';
 import EscolhaPior from './EscolhaPior';
-// import EscolhaAnimal from './EscolhaAnimal';
-// import GerandoTreta from './GerandoTreta';
-import InputName from './InputName';
+import EscolhaAnimal from './EscolhaAnimal';
+import GerandoTreta from './GerandoTreta';
 
 
 
@@ -36,7 +37,27 @@ function Routes() {
   function clickRadio(e) {
     setBolacha(e)
   }
+
+  // ============ EscolhaPior ============
+
+  const [worst, setWorst] = useState('')
+
+  function chooseTheWorst(e) {
+    setWorst(e)
+  }
+
+  // ============ EscolhaUmAnimal ============
+
+  const [animal, setAnimal] = useState('');
+
+  function chooseAnimal(e) {
+    setAnimal(e)
+  }
+  
+  console.log(worst)
   console.log(bolacha)
+  console.log(name)
+  console.log(animal)
 
   return (
     <Switch>
@@ -44,9 +65,9 @@ function Routes() {
         () => <InputName {...funcs} /> } />
       <Route path='/preferencia' render={
         () => <EscolhaCerto clickRadio={clickRadio} redirect='/comida'/>} />
-      <Route path='/comida' render={() => <EscolhaPior valores={ {name, bolacha} } />} />
-      {/* <Route path='/animal' render={EscolhaAnimal} /> */}
-      {/* <Route path='/manchete' render={GerandoTreta} /> */}
+      <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} />} />
+      <Route path='/animal' render={() => <EscolhaAnimal chooseAnimal={chooseAnimal} redirect={'/manchete'} />} />
+      <Route path='/manchete' render={GerandoTreta} />
     </Switch>
   )
 }

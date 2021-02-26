@@ -6,8 +6,8 @@ function EscolhaCerto(props) {
   const { redirect, clickRadio } = props
   return (
     <>
-      <h1><strong>Qual é o certo?</strong></h1>
       <Container >
+      <h1><strong>Qual é o certo?</strong></h1>
         <FormGroup className="bolacha-biscoito">
           <Label>
           <Input type="radio" name="radio2" value="Bolacha" onClick={(e) => clickRadio(e.target.value)} />
@@ -18,6 +18,7 @@ function EscolhaCerto(props) {
             Biscoito
           </Label>
         </FormGroup>
+        <hr/>
         <NextButton redirect={redirect}/>
       </Container>
     </>
