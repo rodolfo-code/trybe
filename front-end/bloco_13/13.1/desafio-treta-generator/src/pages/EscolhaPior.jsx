@@ -6,7 +6,7 @@ function EscolhaPior(props) {
   const { chooseTheWorst, redirect } = props;
   return (
     <>
-      <h1><strong>Qual é o certo?</strong></h1>
+      <h1><strong>Qual é o pior?</strong></h1>
       <Container>
         <ButtonToolbar>
           <Button outline color="danger" value="AÇAI" onClick={(e) => chooseTheWorst(e.target.value)}>AÇAI</Button>

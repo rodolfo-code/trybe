@@ -1,9 +1,15 @@
 import React from 'react';
 
-function GerandoTreta() {
+function GerandoTreta(props) {
+ const { name, bolacha, worst, animal } = props;
+
   return (
     <div>
-      Texto da treta
+      Muita treta vish
+      {name}
+      {bolacha}
+      {worst}
+      {animal}
     </div>
   )
 }
