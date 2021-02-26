@@ -30,3 +30,7 @@ div.btn-toolbar {
   justify-content: space-around;
 }
 
+div.row {
+  display: flex;
+  justify-content: center;
+}
