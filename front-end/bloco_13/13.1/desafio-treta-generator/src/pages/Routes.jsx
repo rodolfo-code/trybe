@@ -54,10 +54,12 @@ function Routes() {
     setAnimal(e)
   }
   
-  console.log(worst)
-  console.log(bolacha)
-  console.log(name)
-  console.log(animal)
+  const answer = {
+    name,
+    bolacha,
+    worst,
+    animal,
+  }
 
   return (
     <Switch>
@@ -67,7 +69,7 @@ function Routes() {
         () => <EscolhaCerto clickRadio={clickRadio} redirect='/comida'/>} />
       <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} />} />
       <Route path='/animal' render={() => <EscolhaAnimal chooseAnimal={chooseAnimal} redirect={'/manchete'} />} />
-      <Route path='/manchete' render={GerandoTreta} />
+      <Route path='/manchete' render={() => <GerandoTreta {...answer} />} />
     </Switch>
   )
 }
