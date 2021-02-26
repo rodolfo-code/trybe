@@ -1,6 +1,7 @@
 import React from 'react';
 
-function EscolhaPior() {
+function EscolhaPior(props) {
+  
   return (
     <div>
       Escolha pior açai, sushi, sopa

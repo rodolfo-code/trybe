@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import EscolhaCerto from './EscolhaCerto';
+import EscolhaPior from './EscolhaPior';
 // import EscolhaAnimal from './EscolhaAnimal';
-// import EscolhaPior from './EscolhaPior';
 // import GerandoTreta from './GerandoTreta';
 import InputName from './InputName';
 
@@ -13,16 +13,14 @@ function Routes() {
   const [inputName, setInputName] = useState('');
 
   // ============ InputName ============
-  const handleClick = () => {
+  function handleClick() {
     setName(inputName)
     setInputName('')
   }
 
-  const handleChange = (e) => {
+  function handleChange(e) {
     setInputName(e)
   }
-  console.log(inputName)
-  console.log(name)
 
   const funcs = {
     handleChange,
@@ -31,14 +29,26 @@ function Routes() {
     redirect: '/preferencia'
   }
 
+  // ============ EscolhaCerto ============
+
+  const [bolacha, setBolacha] = useState('');
+
+  function selectRadio() {
+
+  }
+
+  function clickRadio(e) {
+    setBolacha(e)
+  }
+  console.log(bolacha)
+
   return (
     <Switch>
-      {/* <Route exact path='/' render={
-        () => <InputName handleChange={handleChange} handleClick={handleClick} input={inputName} />}/> */}
       <Route exact path='/' render={
-        (props) => <InputName {...funcs} /> } />
-      <Route path='/preferencia' render={EscolhaCerto} />
-      {/* <Route path='/comida' render={EscolhaPior} /> */}
+        () => <InputName {...funcs} /> } />
+      <Route path='/preferencia' render={
+        () => <EscolhaCerto clickRadio={clickRadio} redirect='/comida'/>} />
+      <Route path='/comida' render={() => <EscolhaPior valores={ {name, bolacha} } />} />
       {/* <Route path='/animal' render={EscolhaAnimal} /> */}
       {/* <Route path='/manchete' render={GerandoTreta} /> */}
     </Switch>
