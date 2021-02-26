@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Input } from 'reactstrap';
+import { Container, Input, Label } from 'reactstrap';
 import NextButton from '../components/NextButton';
 
 function InputName(props) {
@@ -7,8 +7,11 @@ function InputName(props) {
   console.log(props)
   return (
     <>
-    <h1><strong>Digite um nome:</strong></h1>
       <Container>
+        <Label htmlFor="name">
+
+          <h1><strong>Digite um nome:</strong></h1>
+        </Label>
         <Input type="text" name="text" id="name" value={input} onChange={(e) => handleChange(e.target.value)} />
         <hr/>
         <NextButton handleClick={handleClick} redirect={redirect} />
