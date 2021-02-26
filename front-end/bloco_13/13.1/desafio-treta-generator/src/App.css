@@ -16,3 +16,8 @@ div.button {
 h1 {
   margin-bottom: 30px;
 }
+
+div.bolacha-biscoito {
+  display: flex;
+  justify-content: space-between;
+}

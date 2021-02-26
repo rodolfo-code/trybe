@@ -33,10 +33,6 @@ function Routes() {
 
   const [bolacha, setBolacha] = useState('');
 
-  function selectRadio() {
-
-  }
-
   function clickRadio(e) {
     setBolacha(e)
   }
