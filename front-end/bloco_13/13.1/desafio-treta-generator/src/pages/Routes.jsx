@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import InputName from './InputName';
-import EscolhaCerto from './EscolhaCerto';
-import EscolhaPior from './EscolhaPior';
-import EscolhaAnimal from './EscolhaAnimal';
-import GerandoTreta from './GerandoTreta';
+import InputName from './InputName.js';
+import EscolhaCerto from './EscolhaCerto.js';
+import EscolhaPior from './EscolhaPior.js';
+import EscolhaAnimal from './EscolhaAnimal.js';
+import GerandoTreta from './GerandoTreta.js';
 
 
 
@@ -53,6 +53,10 @@ function Routes() {
   function chooseAnimal(e) {
     setAnimal(e)
   }
+
+  // ============ Arrays ============
+
+  const comidas = ['AÇAI', 'SUSHI', 'SOPA']
   
   const answer = {
     name,
@@ -67,7 +71,7 @@ function Routes() {
         () => <InputName {...funcs} /> } />
       <Route path='/preferencia' render={
         () => <EscolhaCerto clickRadio={clickRadio} redirect='/comida'/>} />
-      <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} />} />
+      <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} comidas={comidas}/>} />
       <Route path='/animal' render={() => <EscolhaAnimal chooseAnimal={chooseAnimal} redirect={'/manchete'} />} />
       <Route path='/manchete' render={() => <GerandoTreta {...answer} />} />
     </Switch>
