@@ -56,7 +56,8 @@ function Routes() {
 
   // ============ Arrays ============
 
-  const comidas = ['AÇAI', 'SUSHI', 'SOPA']
+  const foods = ['AÇAI', 'SUSHI', 'SOPA'];
+
   
   const answer = {
     name,
@@ -71,7 +72,7 @@ function Routes() {
         () => <InputName {...funcs} /> } />
       <Route path='/preferencia' render={
         () => <EscolhaCerto clickRadio={clickRadio} redirect='/comida'/>} />
-      <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} comidas={comidas}/>} />
+      <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} foods={foods}/>} />
       <Route path='/animal' render={() => <EscolhaAnimal chooseAnimal={chooseAnimal} redirect={'/manchete'} />} />
       <Route path='/manchete' render={() => <GerandoTreta {...answer} />} />
     </Switch>
