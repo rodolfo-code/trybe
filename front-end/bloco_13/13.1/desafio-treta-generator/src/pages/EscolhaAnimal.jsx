@@ -22,7 +22,7 @@ function EscolhaAnimal(props) {
           </ButtonDropdown>
         </Row>
         <hr/>
-        <NextButton redirect={redirect}/>
+        <NextButton redirect={redirect}>Próxima</NextButton>
       </Container>
     </>
   );
