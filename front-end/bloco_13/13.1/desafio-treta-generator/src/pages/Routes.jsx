@@ -34,7 +34,7 @@ function Routes() {
 
   const [bolacha, setBolacha] = useState('');
 
-  function clickRadio(e) {
+  function selectCookie(e) {
     setBolacha(e)
   }
 
@@ -58,6 +58,7 @@ function Routes() {
 
   const foods = ['AÇAI', 'SUSHI', 'SOPA'];
   const animals = ['Gato', 'Cachorro'];
+  const cookies = ['Bolacha', 'Biscoito', 'Negresco']
   
   const answer = {
     name,
@@ -71,7 +72,7 @@ function Routes() {
       <Route exact path='/' render={
         () => <InputName {...funcs} /> } />
       <Route path='/preferencia' render={
-        () => <EscolhaCerto clickRadio={clickRadio} redirect='/comida'/>} />
+        () => <EscolhaCerto radioClick={selectCookie} redirect='/comida' arrayCookies={cookies} />} />
       <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} foods={foods}/>} />
       <Route path='/animal' render={() => <EscolhaAnimal chooseAnimal={chooseAnimal} redirect={'/manchete'} animals={animals} />} />
       <Route path='/manchete' render={() => <GerandoTreta {...answer} />} />
