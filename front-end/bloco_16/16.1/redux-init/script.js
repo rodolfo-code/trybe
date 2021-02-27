@@ -6,15 +6,16 @@
 //   }
 // }
 
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
 // Criação do reducer
 function counterReducer(state = 0, action) {
   switch (action.type) {
     case "INCREMENT":
-      return state + 1;
+      return state + action.payload.amount;
     case "DECREMENT":
-      return state - 1
-    case "INCREMENT-10":
-      return state + 10
+      return state - action.payload.amount;
     default:
       return state
   }
@@ -32,7 +33,10 @@ const buttonIncrement = document
   .getElementById('increment')
   .addEventListener('click', () => {
     const incrementAction = {
-      type: 'INCREMENT'
+      type: 'INCREMENT',
+      payload: {
+        amount: 1
+      }
     };
     store.dispatch(incrementAction)
   })
@@ -41,7 +45,10 @@ const buttonDecrement = document
   .getElementById('decrement')
   .addEventListener('click', () => {
     const decrementAction = {
-      type: 'DECREMENT'
+      type: 'DECREMENT',
+      payload: {
+        amount: 1,
+      }
     }
     store.dispatch(decrementAction);
   })
@@ -50,7 +57,10 @@ const buttonIncrement10 = document
   .getElementById('increment-10')
   .addEventListener('click', () => {
     const increment10Action = {
-      type: 'INCREMENT-10'
+      type: 'INCREMENT',
+      payload: {
+        amount: 10,
+      }
     }
     store.dispatch(increment10Action)
   })
