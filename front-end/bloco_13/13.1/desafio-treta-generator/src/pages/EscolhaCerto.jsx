@@ -19,7 +19,7 @@ function EscolhaCerto(props) {
           </Label>
         </FormGroup>
         <hr/>
-        <NextButton redirect={redirect}/>
+        <NextButton redirect={redirect}>Próxima</NextButton>
       </Container>
     </>
   )

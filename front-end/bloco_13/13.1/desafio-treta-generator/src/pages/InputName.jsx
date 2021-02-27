@@ -14,7 +14,7 @@ function InputName(props) {
         </Label>
         <Input type="text" name="text" id="name" value={input} onChange={(e) => handleChange(e.target.value)} />
         <hr/>
-        <NextButton handleClick={handleClick} redirect={redirect} />
+        <NextButton handleClick={handleClick} redirect={redirect}>Próxima</NextButton>
       </Container>
     </>
   )

@@ -14,7 +14,7 @@ function EscolhaPior(props) {
           <Button outline color="danger" value="SOPA" onClick={(e) => chooseTheWorst(e.target.value)}>SOPA</Button>
         </ButtonToolbar>
         <hr/>
-        <NextButton redirect={redirect} />
+        <NextButton redirect={redirect}>Próxima</NextButton>
       </Container>
     </>
   )
