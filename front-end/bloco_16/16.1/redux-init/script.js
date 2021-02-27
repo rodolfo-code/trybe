@@ -10,12 +10,18 @@ const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
 // Criação do reducer
-function counterReducer(state = 0, action) {
+function counterReducer(state = { clicks: 0, likes: 0 }, action) {
   switch (action.type) {
     case INCREMENT:
-      return state + action.payload.amount;
+      return {
+        ...state,
+        clicks: state.clicks + action.payload.amount
+      };
     case DECREMENT:
-      return state - action.payload.amount;
+      return {
+        ...state,
+        clicks: state.clicks - action.payload.amount
+      };
     default:
       return state
   }
@@ -69,5 +75,5 @@ const buttonIncrement10 = document
 
 store.subscribe(() => {
   const valueSpan = document.getElementById('value');
-  valueSpan.innerHTML = store.getState()
+  valueSpan.innerHTML = store.getState().clicks
 })
