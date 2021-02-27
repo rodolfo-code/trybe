@@ -12,9 +12,9 @@ const DECREMENT = 'DECREMENT';
 // Criação do reducer
 function counterReducer(state = 0, action) {
   switch (action.type) {
-    case "INCREMENT":
+    case INCREMENT:
       return state + action.payload.amount;
-    case "DECREMENT":
+    case DECREMENT:
       return state - action.payload.amount;
     default:
       return state
@@ -33,7 +33,7 @@ const buttonIncrement = document
   .getElementById('increment')
   .addEventListener('click', () => {
     const incrementAction = {
-      type: 'INCREMENT',
+      type: INCREMENT,
       payload: {
         amount: 1
       }
@@ -45,7 +45,7 @@ const buttonDecrement = document
   .getElementById('decrement')
   .addEventListener('click', () => {
     const decrementAction = {
-      type: 'DECREMENT',
+      type: DECREMENT,
       payload: {
         amount: 1,
       }
@@ -57,7 +57,7 @@ const buttonIncrement10 = document
   .getElementById('increment-10')
   .addEventListener('click', () => {
     const increment10Action = {
-      type: 'INCREMENT',
+      type: INCREMENT,
       payload: {
         amount: 10,
       }
