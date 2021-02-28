@@ -3,20 +3,17 @@ import Card from './Card'
 import './Intervalo.css'
 
 function Intervalo(props) {
-  const { min, max, onMinChanged, onMaxChanged } = props;
   return (
     <Card title="Intervalo de Números" red>
       <div className="Intervalo">
         <spa>
           <strong>Mínimo:</strong>
-          <input type="number"value={min}
-            onChange={(e) => onMinChanged(+e.target.value)}
+          <input type="number"value={0}
           />
         </spa>
         <span>
           <strong>Máximo:</strong>
-          <input type="number" value={max}
-            onChange={(e) => onMaxChanged(+e.target.value)}
+          <input type="number" value={10}
           />
         </span>
       </div>
