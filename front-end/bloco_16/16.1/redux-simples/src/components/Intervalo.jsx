@@ -10,13 +10,13 @@ function Intervalo(props) {
         <spa>
           <strong>Mínimo:</strong>
           <input type="number"value={min}
-            onChange={(e) => onMinChanged(e.target.value)}
+            onChange={(e) => onMinChanged(+e.target.value)}
           />
         </spa>
         <span>
           <strong>Máximo:</strong>
           <input type="number" value={max}
-            onChanged={(e) => onMaxChanged(e.target.value)}
+            onChange={(e) => onMaxChanged(+e.target.value)}
           />
         </span>
       </div>
