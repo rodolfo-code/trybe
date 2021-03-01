@@ -25,4 +25,8 @@ function GerandoTreta(props) {
   )
 }
 
+function mapStateToProps(state) {
+  
+}
+
 export default GerandoTreta;
