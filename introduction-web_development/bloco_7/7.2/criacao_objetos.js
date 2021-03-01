@@ -16,3 +16,19 @@ function Produto(nome, preco, desc) {
 const p1 = new Produto('Caneta', 7.99, 0.15)
 const p2 = new Produto('Norebook', 2998.99, 0.25)
 console.log(p1.getPrecoComDesconto(), p2.getPrecoComDesconto())
+
+// Funçao factory
+
+function criarFuncionario(nome, salarioBase, faltas) {
+  return {
+    nome,
+    salarioBase,
+    faltas,
+    getSalario() {
+      return (salarioBase/30) * (30 - faltas)
+    }
+  }
+}
+
+const f1 = criarFuncionario('rodolfo', 12000, 0)
+console.log(f1.getSalario())
