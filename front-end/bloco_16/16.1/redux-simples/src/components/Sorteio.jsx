@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 function Sorteio(props) {
   const { min, max } = props;
   const rand = parseInt(Math.random() * (max - min)) + min
-  console.log(rand)
   return (
     <Card title="Sorteio de um Número" purple>
       <div>
