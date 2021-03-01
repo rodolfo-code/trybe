@@ -38,3 +38,11 @@ const carro = {
 	calcularValorSeguro: function () {
 		//...
 }
+
+// acessando e modificando valores
+
+carro.proprietario.endereço.numero = 250
+
+console.log(carro.proprietario.endereço.numero)
+
+carro['proprietario']['endereço']['logradouro'] = 'Rua dos Alfeneiros'
