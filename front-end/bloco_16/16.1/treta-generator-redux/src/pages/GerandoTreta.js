@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import NextButton from '../components/NextButton';
+import { connect } from 'react-redux';
 
 function GerandoTreta(props) {
-  const { name, bolacha, worst, animal } = props;
+  const { cookie, food, animal, nome } = props;
 
   const conditional = () => {
-    if(worst === 'SOPA') return `${worst} não é janta`
-    return `${worst} é ruim`
+    if(food === 'SOPA') return `${food} não é janta`
+    return `${food} é ruim`
   }
 
   return (
@@ -15,8 +16,8 @@ function GerandoTreta(props) {
       <h1><strong>GERANDO A TRETA</strong></h1>
       <Container className="treta-container">
         <p className="treta-text">
-          {`Em entrevista internacional, ${name} teve que debater sobre a discussão mais acirrada do século,
-          é biscoito ou bolacha? ${name} foi direto na canela dizendo que o certo é ${bolacha}!
+          {`Em entrevista internacional, ${nome} teve que debater sobre a discussão mais acirrada do século,
+          é biscoito ou bolacha? ${nome} foi direto na canela dizendo que o certo é ${cookie}!
           E ainda complementou que ${conditional()} e que nem seu ${animal} come!`}
         </p>
       </Container>
@@ -25,4 +26,13 @@ function GerandoTreta(props) {
   )
 }
 
-export default GerandoTreta;
+function mapStateToProps(state) {
+  return {
+    nome: state.respostas.name,
+    cookie: state.respostas.cookie,
+    food: state.respostas.food,
+    animal: state.respostas.animal,
+  }
+}
+
+export default connect(mapStateToProps)(GerandoTreta);
