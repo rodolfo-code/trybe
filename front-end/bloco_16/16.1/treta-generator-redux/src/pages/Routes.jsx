@@ -60,13 +60,6 @@ function Routes() {
   const animals = ['Gato', 'Cachorro'];
   const cookies = ['Bolacha', 'Biscoito', 'Negresco']
   
-  const answer = {
-    name,
-    bolacha,
-    worst,
-    animal,
-  }
-
   return (
     <Switch>
       <Route exact path='/' render={
@@ -75,7 +68,7 @@ function Routes() {
         () => <EscolhaCerto radioClick={selectCookie} redirect='/comida' arrayCookies={cookies} />} />
       <Route path='/comida' render={() => <EscolhaPior chooseTheWorst={chooseTheWorst} redirect={'/animal'} foods={foods}/>} />
       <Route path='/animal' render={() => <EscolhaAnimal chooseAnimal={chooseAnimal} redirect={'/manchete'} animals={animals} />} />
-      <Route path='/manchete' render={() => <GerandoTreta {...answer} />} />
+      <Route path='/manchete' render={() => <GerandoTreta />} />
     </Switch>
   )
 }
