@@ -1,4 +1,4 @@
-// Reducers
+// Actions
 
 export const addNome = (value) => ({
   type: 'ADD_NAME',
