@@ -2,10 +2,8 @@
 
 const initialState = {
   name: 'funciionou',
-  
+  preferencia: 'É bolacha po'  
 };
-
-console.log(initialState.name)
 
 export const tretaReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -13,6 +11,11 @@ export const tretaReducer = (state = initialState, action) => {
       return {
         ...state,
         name: action.value
+      }
+    case 'SELECT_CORRECT':
+      return {
+        ...state,
+        preferencia: action.value
       }
 
     default:

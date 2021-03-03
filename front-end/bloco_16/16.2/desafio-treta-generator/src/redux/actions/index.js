@@ -2,12 +2,12 @@
 
 
 export const addName = (value) => ({
-  // a: console.log(value),
   type: 'ADD_NAME',
   value,
 });
 
-export const selectCorrect = (value) => ({
+export const preference = (value) => ({
+  b: console.log(value),
   type: 'SELECT_CORRECT',
   value,
 });
