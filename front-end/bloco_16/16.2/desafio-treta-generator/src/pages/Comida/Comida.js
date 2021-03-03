@@ -24,7 +24,7 @@ function Comida({name, preferencia}) {
 const mapStateToProps = (state) => ({
   name: state.tretaReducer.name,
   preferencia: state.tretaReducer.preferencia
-})
+});
 
 
 export default connect(mapStateToProps)(Comida);
