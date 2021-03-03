@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Input, Button } from '../../components';
+import { addName } from '../../redux/actions';
 import './Nome.css';
 
-class Nome extends Component {
-  constructor() {
-    super();
+function Nome(props) {
+  const [inputName, setInputName] = useState('')
+  const { newName } = props;
 
-    this.state = {
-      nome: '',
-    }
-  }
-
-  render() {
-    const { nome } = this.state;
-
-    return (
-      <div className="nome">
-        <h1>Digite um nome:</h1>
-        <Input value={ nome } onChange={ (e) => this.setState({ nome: e.target.value }) } />
-        <Button label="Próxima" to="/preferencia" />
-      </div>
-    );
-  }
+  return (
+    <div className="nome">
+      <h1>Digite um nome:</h1>
+      <Input value={ inputName } onChange={ (e) => setInputName(e.target.value) } />
+      <Button label="Próxima" to="/preferencia" onClick={() => newName(inputName)} />
+    </div>
+  );
 }
 
-export default Nome;
+const mapDispatchToProps = (dispatch) => ({
+  newName: (name) => dispatch(addName(name))
+})
+
+export default connect(null, mapDispatchToProps)(Nome);

@@ -1,6 +1,8 @@
 // Actions
 
-export const addNome = (value) => ({
+
+export const addName = (value) => ({
+  // a: console.log(value),
   type: 'ADD_NAME',
   value,
 });

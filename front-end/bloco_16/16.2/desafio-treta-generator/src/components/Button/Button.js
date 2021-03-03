@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-class Button extends Component {
-  render() {
-    const { onClick, to, label, value, className } = this.props;
-    return (
-      <Link to={ to }>
-        <button className={ `button ${className}` } type="button" value={ value } onClick={ onClick }>
-          { label }
-        </button>
-      </Link>
-    );
-  }
+function Button(props) {
+  const { onClick, to, label, value, className } = props;
+  return (
+    <Link to={ to }>
+      <button className={ `button ${className}` } type="button" value={ value } onClick={ onClick }>
+        { label }
+      </button>
+    </Link>
+  );
 }
 
 Button.defaultProps = {

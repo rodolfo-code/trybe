@@ -1,19 +1,22 @@
 // Reducers
 
-const INITIAL_STATE = {
-  test: 'funcionou'
+const initialState = {
+  name: 'funciionou',
+  
 };
 
-export const tretaReducer = (state = INITIAL_STATE, action) => ({
-  test: state
-})
+console.log(initialState.name)
 
+export const tretaReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD_NAME':
+      return {
+        ...state,
+        name: action.value
+      }
 
- // switch (action.type) {
-  //   case 'ADD_NAME':
-      
-  //     break;
-  
-  //   default:
-  //     break;
-  // }
+    default:
+      return state;
+  }
+}
+
