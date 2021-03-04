@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Radio, Button } from '../../components';
 import { preference } from '../../redux/actions';
 import './Preferencia.css';
 
 function Preferencia({ preferencia, name, prefer }) {
-  // const [preference, setPreference] = useState('')
-  // console.log(name)
-  // console.log(preferencia)
+  
   return (
     <div className="preferencia">
       <h1>Escolha o certo:</h1>

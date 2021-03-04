@@ -15,7 +15,7 @@ function Button(props) {
 
 Button.defaultProps = {
   className: 'button',
-  to: ''
+  to: '/animal',
 };
 
 export default Button;
