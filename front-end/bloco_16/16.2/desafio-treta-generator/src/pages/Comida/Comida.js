@@ -5,7 +5,6 @@ import { foodSelect } from '../../redux/actions';
 import './Comida.css';
 
 function Comida({preferencia, food}) {
-  
   return (
     <div className="comida">
       <h1>Escolha o pior:</h1>
@@ -14,18 +13,13 @@ function Comida({preferencia, food}) {
         <Button className={ preferencia === 'sushi' ? 'escolhida' : 'opcao' } label="Sushi" value="sushi" onClick={ (e) => food(e.target.value) } />
         <Button className={ preferencia === 'sopa' ? 'escolhida' : 'opcao' } label="Sopa" value="sopa" onClick={ (e) => food(e.target.value) } />
       </div>
-      <Button label="Próxima" to="/animal" />
+      {/* <Button label="Próxima" to="/animal" /> */}
     </div>
   );
 }
-
-const mapStateToProps = (state) => ({
-  name: state.tretaReducer.name,
-  preferencia: state.tretaReducer.preferencia
-});
 
 const mapDispatchToProps = (dispatch) => ({
   food: (e) => dispatch(foodSelect(e))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Comida);
+export default connect(null, mapDispatchToProps)(Comida);
