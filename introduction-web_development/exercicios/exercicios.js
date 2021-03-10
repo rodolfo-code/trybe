@@ -30,10 +30,10 @@ console.log(higher(5, 0))
 
 const revert = (param) => {
   if(typeof param === 'boolean') return !param
-  return param * (-1)
+  return -param
 
 }
 
-console.log(revert(true))
+console.log(revert(3))
 
 //
