@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, FormControl, Navbar } from 'react-bootstrap';
 
-function Header({ setInputName }) {
+function Header({ setInputName, searchName }) {
   const [valueName, setValueName] = useState('');
   return (
     <header>
@@ -9,7 +9,7 @@ function Header({ setInputName }) {
         <h1>Rick and Morty</h1>
       </div>
       <Navbar className="justify-content-center">
-        <Form inline>
+        <Form inline onSubmit={(e) => e.preventDefault()}>
           <FormControl
             type="text"
             placeholder="pesquisar..."
