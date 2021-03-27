@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form, FormControl, Navbar } from 'react-bootstrap';
 
-function Header({ setInputName, inputName }) {
+function Header({ setInputName }) {
+  const [valueName, setValueName] = useState('');
   return (
     <header>
       <div className="header-title">
@@ -13,10 +14,17 @@ function Header({ setInputName, inputName }) {
             type="text"
             placeholder="pesquisar..."
             className=" mr-sm-2"
-            value={inputName}
-            onChange={(e) => setInputName(e.target.value)}
+            value={valueName}
+            onChange={(e) => setValueName(e.target.value)}
           />
-          <Button type="button" variant="outline-secondary">
+          <Button
+            type="button"
+            variant="outline-secondary"
+            onClick={() => {
+              setInputName(valueName);
+              setValueName('');
+            }}
+          >
             Procurar
           </Button>
         </Form>

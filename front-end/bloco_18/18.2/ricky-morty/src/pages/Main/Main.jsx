@@ -9,19 +9,24 @@ import CharacterContext from '../../contextApi/characterContext';
 function Main() {
   const { characters, setSelectedChar } = useContext(CharacterContext);
   const [inputName, setInputName] = useState('');
+  const [filteredChar, setFilteredChar] = useState([]);
 
   console.log(inputName);
+  console.log(filteredChar);
 
-  // useEffect(() => {}, []);
+  useEffect(() => {
+    const filtered = characters.filter((char) => char.name.includes(inputName));
+    setFilteredChar(filtered);
+  }, [characters, inputName]);
 
   return (
     <>
-      <Header setInputName={setInputName} inputName={inputName} />
+      <Header setInputName={setInputName} />
       <div className="card-container">
-        {!characters ? (
+        {!filteredChar ? (
           <Loading />
         ) : (
-          characters.map((char, i) => <CharacterCard key={i} {...char} />)
+          filteredChar.map((char, i) => <CharacterCard key={i} {...char} />)
         )}
       </div>
     </>

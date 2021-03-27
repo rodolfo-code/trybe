@@ -3,8 +3,7 @@ import './characterCard.css';
 
 import { Button, Card } from 'react-bootstrap';
 
-function CharacterCard(props) {
-  const { name, image } = props;
+function CharacterCard({ name, image }) {
   return (
     <Card className="card">
       <Card.Img variant="top" src={image} />
