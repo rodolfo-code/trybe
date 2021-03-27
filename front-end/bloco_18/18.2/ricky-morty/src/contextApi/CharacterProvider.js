@@ -16,8 +16,6 @@ function CharacterProvider({ children }) {
     getChar();
   }, []);
 
-  useEffect(() => {}, []);
-
   const value = {
     characters,
     selectedChar,

@@ -5,7 +5,6 @@ import { Button, Card } from 'react-bootstrap';
 
 function CharacterCard(props) {
   const { name, image } = props;
-  console.log(props);
   return (
     <Card className="card">
       <Card.Img variant="top" src={image} />
