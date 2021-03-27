@@ -1,0 +1,13 @@
+.card {
+  width: 15rem;
+}
+
+.card:hover {
+  /* box-shadow: 5px 10px 20px 10px rgba(0,0,0, 0.253) !important; */
+  box-shadow: 0 0 2em rgb(121, 121, 121);
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+}

@@ -1,10 +1,13 @@
-import Routes from './Routes';
+import Routes from './routes/Routes';
+import './global.css';
+
+import CharacterProvider from './contextApi/CharacterProvider';
 
 function App() {
   return (
-    <>
+    <CharacterProvider>
       <Routes />
-    </>
+    </CharacterProvider>
   );
 }
 
