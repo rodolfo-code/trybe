@@ -1,0 +1,52 @@
+db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})
+
+db.estados.find()
+{ "_id" : ObjectId("608a0fa336014baa824445b2"), "nome" : "Acre", "sigla" : "AC", "regiao" : "Norte" }
+{ "_id" : ObjectId("608a105136014baa824445b3"), "nome" : "Alagoas", "sigla" : "AL", "regiao" : "Nordeste", "populacao" : 3322000 }
+
+db.estados.find().pretty()
+{
+	"_id" : ObjectId("608a0fa336014baa824445b2"),
+	"nome" : "Acre",
+	"sigla" : "AC",
+	"regiao" : "Norte"
+}
+{
+	"_id" : ObjectId("608a105136014baa824445b3"),
+	"nome" : "Alagoas",
+	"sigla" : "AL",
+	"regiao" : "Nordeste",
+	"populacao" : 3322000
+}
+
+db.estados.insert({
+... nome: "Rio de Janeiro",
+... sigla: "RJ",
+... regiao: "Sudeste",
+... cidades: [{
+... nome: "Niterói",
+... area: 133.9,
+... populacao: 487562
+... }]
+... })
+
+db.estados.insert({
+... nome: "São Paulo",
+... sigla: "SP",
+... regiao: "Sudeste",
+... cidades: [{
+... nome: "Campinas",
+... area: 795.7,
+... prefeito: "Jonas Donizette",
+... populacao: 1081000
+... },
+... {
+... nome: "Guarulhos",
+... populacao: 1325000,
+... },
+... {
+... nome: "Sorocaba",
+... distanciaCapital: 87,
+... populacao: 644919
+... }]
+... })
