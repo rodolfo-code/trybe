@@ -1,0 +1,53 @@
+db.estados.findOne()
+{
+	"_id" : ObjectId("608a0fa336014baa824445b2"),
+	"nome" : "Acre",
+	"sigla" : "AC",
+	"regiao" : "Norte"
+}
+
+db.estados.findOne({sigla: "SP"})
+{
+	"_id" : ObjectId("608a165f36014baa824445b5"),
+	"nome" : "São Paulo",
+	"sigla" : "SP",
+	"regiao" : "Sudeste",
+	"cidades" : [
+		{
+			"nome" : "Campinas",
+			"area" : 795.7,
+			"prefeito" : "Jonas Donizette",
+			"populacao" : 1081000
+		},
+		{
+			"nome" : "Guarulhos",
+			"populacao" : 1325000
+		},
+		{
+			"nome" : "Sorocaba",
+			"distanciaCapital" : 87,
+			"populacao" : 644919
+		}
+	]
+}
+
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+{
+	"_id" : ObjectId("608a0fa336014baa824445b2"),
+	"nome" : "Acre",
+	"sigla" : "AC",
+	"regiao" : "Norte"
+}
+{
+	"_id" : ObjectId("608a11b836014baa824445b4"),
+	"nome" : "Rio de Janeiro",
+	"sigla" : "RJ",
+	"regiao" : "Sudeste",
+	"cidades" : [
+		{
+			"nome" : "Niterói",
+			"area" : 133.9,
+			"populacao" : 487562
+		}
+	]
+}
