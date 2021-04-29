@@ -51,3 +51,12 @@ db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
 		}
 	]
 }
+
+db.estados.find({populacao: {$exists: true}}).pretty()
+{
+	"_id" : ObjectId("608a105136014baa824445b3"),
+	"nome" : "Alagoas",
+	"sigla" : "AL",
+	"regiao" : "Nordeste",
+	"populacao" : 3322000
+}
