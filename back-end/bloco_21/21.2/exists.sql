@@ -6,3 +6,10 @@ WHERE NOT EXISTS(
     WHERE b.Id = book_id
 );
 
+SELECT id, title
+FROM hotel.books b
+WHERE EXISTS(
+    SELECT *
+    FROM hotel.books_lent
+    WHERE b.Id = book_id AND b.title like '%lost%'
+);
