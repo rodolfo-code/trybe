@@ -6,7 +6,6 @@ const ALTURA_M_CM = questionFloat("Qual sua altura? ");
 function calculaImc() {
   const peso = PESO_KG;
   const altura = ALTURA_M_CM;
-  console.log(peso, altura);
 
   const imc = (peso / Math.pow(altura, 2)).toFixed(2);
   const resultado = "";
