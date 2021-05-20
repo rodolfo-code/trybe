@@ -30,6 +30,8 @@ function call() {
 
 call();
 
+// Async/await
+
 async function call2() {
   try {
     const result = await recebeParans(...randomArray);
