@@ -98,3 +98,36 @@ async function addChar(newChar) {
 const newChar = { id: '8', name: 'Nelson Muntz' };
 
 addChar(newChar);
+
+// Exercicio 6
+
+function changeChar() {
+  return readFile(newFile, 'utf8')
+    .then((res) => JSON.parse(res))
+    .then((res) => res.filter((char) => char.id !== '8'))
+    .then((noNelson) => noNelson.concat([{ id: '8', name: 'Maggie Simpson' }]))
+    .then((newObj) => writeFile(newFile, JSON.stringify(newObj)));
+}
+
+changeChar();
+
+// Exercicio 5.1
+
+function manyFiles() {
+  const arr = ['Finalmente', 'estou', 'usando', 'Promise.all', '!!!'];
+
+  const promAll = arr.map((string, index) =>
+    writeFile(`./file${index + 1}.txt`, string),
+  );
+
+  return Promise.all([...promAll])
+    .then((item) => item)
+    .then(() => console.log('Arquivos criados con sucesso'))
+    .catch((err) =>
+      console.error(`Erro ao adicionar personagem: ${err.message}`),
+    );
+
+  // console.log(promAll);
+}
+
+manyFiles();
