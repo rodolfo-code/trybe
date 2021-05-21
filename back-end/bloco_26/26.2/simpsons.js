@@ -2,6 +2,7 @@ const { readFile, writeFile } = require('fs/promises');
 const { promisify } = require('util');
 
 const simpsons = './simpsons.json';
+const newFile = './simpsonFamily.json';
 
 const readPromisificado = promisify(readFile);
 
@@ -72,3 +73,28 @@ async function createNewFile() {
 createNewFile();
 
 // Exercicio 5
+
+async function addChar(newChar) {
+  const read = await readFile(newFile, 'utf8').then((result) =>
+    JSON.parse(result),
+  );
+
+  const notEqual = read.some((char) => char.id === newChar.id);
+
+  if (!notEqual) {
+    read.push(newChar);
+  }
+
+  const sortJson = await read.sort((a, b) => a.id - b.id);
+
+  const add = await writeFile(newFile, JSON.stringify(sortJson))
+    .then(() => console.log('Personagem adicionado com sucesso!'))
+    .catch((err) =>
+      console.error(`Erro ao adicionar personagem: ${err.message}`),
+    );
+  return add;
+}
+
+const newChar = { id: '8', name: 'Nelson Muntz' };
+
+addChar(newChar);
