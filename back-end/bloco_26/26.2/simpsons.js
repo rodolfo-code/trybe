@@ -1,4 +1,4 @@
-const { readFile } = require('fs/promises');
+const { readFile, writeFile } = require('fs/promises');
 const { promisify } = require('util');
 
 const simpsons = './simpsons.json';
@@ -30,3 +30,45 @@ async function searchById(id) {
 }
 
 searchById('2');
+
+// Exercicio 3
+
+async function alteraArquivo() {
+  const filterDoc = await readFile(simpsons, 'utf8').then((result) =>
+    JSON.parse(result).filter(
+      (person) => person.id !== '10' && person.id !== '6',
+    ),
+  );
+
+  const toString = JSON.stringify(filterDoc);
+
+  const newDoc = await writeFile(simpsons, toString)
+    .then(() => console.log('Arquivo escrito com sucesso!'))
+    .catch((err) => {
+      console.error(`Erro ao escrever o arquivo: ${err.message}`);
+    });
+  return newDoc;
+}
+
+alteraArquivo();
+
+// Exercicio 4
+
+async function createNewFile() {
+  const filter = await readFile(simpsons, 'utf8').then((result) =>
+    JSON.parse(result).filter((char) => char.id >= '1' && char.id <= '4'),
+  );
+
+  const newFile = './simpsonFamily.json';
+
+  const result = await writeFile(newFile, JSON.stringify(filter))
+    .then(() => console.log('Arquivo criado com sucesso!'))
+    .catch((err) => {
+      console.error(`Erro ao criar o arquivo: ${err.message}`);
+    });
+  return result;
+}
+
+createNewFile();
+
+// Exercicio 5
