@@ -1,9 +1,38 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const rescue = require('express-rescue');
+
+const fs = require('fs/promises');
+
+const simpsonsUtils = require('./utils.js');
 
 const app = express();
 
 app.use(bodyParser.json());
+
+app.get(
+  '/simpsons',
+  rescue(async (req, res) => {
+    const simpsons = await simpsonsUtils.getSimpsons();
+
+    res.send(simpsons);
+  }),
+);
+
+app.get(
+  '/simpsons/:id',
+  rescue(async (req, res) => {
+    const { id } = req.params;
+    const list = await simpsonsUtils.getSimpsons();
+    const findId = list.find((item) => item.id === id);
+    if (!findId) {
+      res.status(401).send({ message: 'simpson not found' });
+    }
+    res.send(findId);
+  }),
+);
+
+// =============================== //
 
 app.get('/ping', (req, res) => {
   res.json({ message: 'pong!' });
