@@ -113,6 +113,12 @@ app.get('/:operacao/:numero1/:numero2', (req, res) => {
   }
 });
 
+// ======== Deletar a receita no banco de dados e retornar a receita deletada ====== /
+
+app.delete('/recipe/:id', async (req, res) => {
+  const { id } = req.params;
+});
+
 app.listen(3000, () => {
   console.log('App rodando na porta 3000');
 });
