@@ -1,7 +1,7 @@
 const express = require('express');
 const crypto = require('crypto');
 const axios = require('axios');
-const getPost = require('./utils');
+const { getPost, getUser } = require('./utils');
 
 const app = express();
 
@@ -71,8 +71,7 @@ app.get('/posts/:id', async (req, res) => {
   if (response) {
     res.status(200).send({ response });
   } else if (!response) {
-    // res.status(401).send({ message: 'id not found' });
-    res.sendStatus(404);
+    res.status(401).send({ message: 'id not found' });
   }
 });
 
@@ -82,6 +81,15 @@ app.get('/posts', async (req, res) => {
     res.status(404).send({ message: 'id not found' });
   }
   res.status(200).send({ response });
+});
+
+app.get('/user/:name', async (req, res) => {
+  const { name } = req.params;
+  const response = await getUser(name);
+  if (response) {
+    return res.status(200).send({ response });
+  }
+  return res.status(404).send({ message: 'user not found' });
 });
 
 app.listen(3000, () => {

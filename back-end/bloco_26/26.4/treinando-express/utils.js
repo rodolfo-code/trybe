@@ -14,6 +14,13 @@ async function getPost(id) {
   return parsed;
 }
 
-// getPost(2).then((data) => console.log(data));
+async function getUser(usr) {
+  const response = await fs.readFile('./post.json', 'utf-8');
+  const foundUser = JSON.parse(response).find((user) => user.author === usr);
+  if (foundUser) {
+    return foundUser;
+  }
+  return;
+}
 
-module.exports = getPost;
+module.exports = { getPost, getUser };
