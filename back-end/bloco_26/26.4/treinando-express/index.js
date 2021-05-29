@@ -2,6 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 const axios = require('axios');
 const { getPost, getUser } = require('./utils');
+const { get } = require('http');
 
 const app = express();
 
@@ -36,18 +37,6 @@ function verifyToken(token) {
   const tokenRegex = /^(\d|\w){12}$/gm;
   return tokenRegex.test(token);
 }
-
-// app.get('/btc/price', async (req, res) => {
-//   const { authorization: token } = req.headers;
-//   const tokenIsValid = verifyToken(token);
-//   if (tokenIsValid) {
-//     const btcEndpoint = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json';
-//     const btcData = await axios.get(btcEndpoint).then(({ data }) => data);
-//     return res.status(200).json({ btcData });
-//   } else {
-//     return res.status(401).json({ message: 'email or password is incorrect.' });
-//   }
-// });
 
 app.post('/btc/price', async (req, res) => {
   const { authorization } = req.headers;
@@ -90,6 +79,38 @@ app.get('/user/:name', async (req, res) => {
     return res.status(200).send({ response });
   }
   return res.status(404).send({ message: 'user not found' });
+});
+
+// ========== Deve validar a operação e retornar o resultado da mesma ======== //
+
+app.get('/:operacao/:numero1/:numero2', (req, res) => {
+  const { operacao, numero1, numero2 } = req.params;
+  const parseNumber1 = parseInt(numero1);
+  const parseNumber2 = parseInt(numero2);
+  switch (operacao) {
+    case 'soma':
+      const soma = parseNumber1 + parseNumber2;
+      res.status(200).send({ resultado: soma });
+      break;
+    case 'subtracao':
+      const sub = parseNumber1 - parseNumber2;
+      res.status(200).json({ resultado: sub });
+      break;
+
+    case 'divisao':
+      const div = parseNumber1 / parseNumber2;
+      res.status(200).json({ resultado: div });
+      break;
+
+    case 'multiplicacao':
+      const mult = parseNumber1 * parseNumber2;
+      res.status(200).json({ resultado: mult });
+      break;
+
+    default:
+      res.status(400).json({ message: 'invalid operation' });
+      break;
+  }
 });
 
 app.listen(3000, () => {
