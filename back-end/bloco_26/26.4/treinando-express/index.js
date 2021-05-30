@@ -2,7 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 const axios = require('axios');
 const { getPost, getUser } = require('./utils');
-const { deleteRecipe } = require('./utilsRecipes');
+const { deleteRecipe, changeRecipe } = require('./utilsRecipes');
 
 const app = express();
 
@@ -123,6 +123,17 @@ app.delete('/recipe/:id', async (req, res) => {
     return res.status(404).send({ message: 'recipe not found' });
   }
   return res.status(200).send(response[0]);
+});
+
+app.put('/recipe/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name, ingredientes } = req.body;
+  const newObj = { id: parseInt(id), name, ingredientes };
+  const response = await changeRecipe(newObj);
+  if (response === null) {
+    return res.status(404).send({ message: 'recipe not found ' });
+  }
+  return res.status(200).send(response);
 });
 
 app.listen(3000, () => {
