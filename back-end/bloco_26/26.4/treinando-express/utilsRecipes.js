@@ -1,21 +1,43 @@
-const rs = require('fs/promises');
+const fs = require('fs/promises');
+
+const readFile = async () => {
+  const recipes = await fs.readFile('./recipe.json', 'utf-8');
+  const parsed = JSON.parse(recipes);
+  return parsed;
+};
+
+const writeFile = async (newFile) => {
+  return await fs.writeFile('./recipe.json', JSON.stringify(newFile));
+};
 
 async function deleteRecipe(id) {
-  const recipes = await rs.readFile('./recipe.json', 'utf-8');
-  const parsed = JSON.parse(recipes);
+  const parsed = await readFile();
   const deletedId = parsed.findIndex((recipe) => recipe.id === id);
   console.log(deletedId);
   if (deletedId === -1) {
     return null;
   }
   const deletedElement = parsed.splice(deletedId, 1);
-  await rs.writeFile('./recipe.json', JSON.stringify(parsed));
+  await writeFile(parsed);
   return deletedElement;
 }
 
-// deleteRecipe(1).then((data) => console.log(data));
+async function changeRecipe(obj) {
+  const parsed = await readFile();
+  console.log(obj.id);
+  const index = parsed.findIndex((recipe) => recipe.id === obj.id);
+  console.log(index);
+  if (index === -1) {
+    return null;
+  }
+  parsed.splice(index, 1, obj);
+  await writeFile(parsed);
+  return await readFile();
+}
 
-module.exports = { deleteRecipe };
+// deleteRecipe(12345).then((data) => console.log(data));
+
+module.exports = { deleteRecipe, changeRecipe };
 
 // [
 //   {
