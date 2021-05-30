@@ -2,7 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 const axios = require('axios');
 const { getPost, getUser } = require('./utils');
-const { get } = require('http');
+const { deleteRecipe } = require('./utilsRecipes');
 
 const app = express();
 
@@ -117,6 +117,12 @@ app.get('/:operacao/:numero1/:numero2', (req, res) => {
 
 app.delete('/recipe/:id', async (req, res) => {
   const { id } = req.params;
+  const response = await deleteRecipe(parseInt(id));
+  console.log(response);
+  if (response === null) {
+    return res.status(404).send({ message: 'recipe not found' });
+  }
+  return res.status(200).send(response[0]);
 });
 
 app.listen(3000, () => {
