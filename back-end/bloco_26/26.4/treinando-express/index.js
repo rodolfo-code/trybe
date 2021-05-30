@@ -136,6 +136,15 @@ app.put('/recipe/:id', async (req, res) => {
   return res.status(200).send(response);
 });
 
+app.get('/param', async (req, res) => {
+  const { id } = req.query;
+  const response = await getPost(id);
+  if (!response) {
+    return res.status(404).send({ message: 'nao encontrado' });
+  }
+  return res.status(200).send(response);
+});
+
 app.listen(3000, () => {
   console.log('App rodando na porta 3000');
 });
