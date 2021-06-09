@@ -31,6 +31,16 @@ app.get('/books', async (req, res) => {
   return res.status(200).send(book);
 });
 
+app.get('/books/:id', async (req, res) => {
+  const { id } = req.params;
+  const book = await Books.getById(id);
+
+  if (!book) {
+    return res.status(404).send({ message: 'Not Found' });
+  }
+  return res.status(200).send(book);
+});
+
 app.listen(port, () => {
   console.log(`Example app listen on port ${port}`);
 });
