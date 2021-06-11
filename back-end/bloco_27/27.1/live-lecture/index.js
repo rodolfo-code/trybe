@@ -37,6 +37,75 @@ app.get('/characters', async (req, res) => {
   }
 });
 
+app.post('/characters', async (req, res) => {
+  try {
+    const { name, cartoon } = req.body;
+    const rows = await connection
+      .then((db) => db.collection('characters').insertOne({ name, cartoon }))
+      .then((result) => result.ops[0]);
+
+    const response = {
+      id: rows.insertId,
+      name,
+      cartoon,
+    };
+
+    res.status(201).json(response);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao realizar operação');
+  }
+});
+
+app.get('/characters/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const rows = await connection.then((db) =>
+      ObjectId.isValid(id)
+        ? db.collection('characters').findOne({ _id: id })
+        : null,
+    );
+    res.status(201).json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Erro ao tentar realizar operação' });
+  }
+});
+
+app.put('/characters/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, cartoon } = req.body;
+
+    await connection.then((db) =>
+      db
+        .collection('characters')
+        .updateOne({ _id: ObjectID(id) }, { $set: { name, cartoon } })
+        .then(() => ({ _id: id, name, cartoon })),
+    );
+    const result = { id, name, cartoon };
+    res.status(201).json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Erro ao tentar realizar operação' });
+  }
+});
+
+app.delete('/characters/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await connection.then((db) =>
+      ObjectId.isValid(id)
+        ? db.collection('characters').deleteOne({ _id: ObjectID(id) })
+        : null,
+    );
+    res.end();
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Erro ao tentar realizar operação' });
+  }
+});
+
 app.listen(3001, () => {
   console.log('Ouvindo a porta 3001');
 });
