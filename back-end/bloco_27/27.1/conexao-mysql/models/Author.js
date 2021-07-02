@@ -32,10 +32,10 @@ async function getAll() {
 }
 
 async function findById(id) {
-  const [authorData] = await connection.execute(
-    'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?',
-    [id],
-  );
+  const query =
+    'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?';
+
+  const [authorData] = await connection.execute(query, [id]);
 
   if (authorData.length === 0) return null;
 
@@ -49,7 +49,14 @@ async function findById(id) {
   });
 }
 
+async function createAuthor(firstName, middleName, lastName) {
+  const query =
+    'INSERT INTO authors (first_name, middle_name, last_name) VALUES (?, ?, ?)';
+  await connection.execute(query, [firstName, middleName, lastName]);
+}
+
 module.exports = {
   getAll,
   findById,
+  createAuthor,
 };
