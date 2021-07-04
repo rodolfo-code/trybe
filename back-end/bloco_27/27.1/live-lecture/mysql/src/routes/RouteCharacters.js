@@ -1,5 +1,6 @@
 const express = require('express');
 const Characters = require('../models/characterModel');
+const connection = require('../models/connection');
 
 const router = express.Router();
 
@@ -23,6 +24,31 @@ router.get('/:id', async (req, res) => {
   }
 
   return res.status(201).send(character);
+});
+
+router.post('/', async (req, res) => {
+  const { name, cartoon } = req.body;
+
+  const newCartoon = await Characters.createNewCharacter(name, cartoon);
+
+  res.status(201).json(newCartoon);
+});
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name, cartoon } = req.body;
+
+  const updatedCharacter = await Characters.updatedCharacter(id, name, cartoon);
+
+  return res.status(201).send(updatedCharacter);
+});
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const deleteCharacter = await Characters.deleteCharacter(id);
+
+  return res.status(201).json(deleteCharacter);
 });
 
 module.exports = router;
