@@ -26,4 +26,12 @@ router.get('/:id', async (req, res) => {
   return res.status(201).send(author);
 });
 
+router.post('/', async (req, res) => {
+  const { id, title, author_id } = req.body;
+
+  await Authors.createNewAuthor(title, author_id);
+
+  res.status(201).send({ message: 'Livro criado com sucesso' });
+});
+
 module.exports = router;
