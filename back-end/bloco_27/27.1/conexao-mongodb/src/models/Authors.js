@@ -47,4 +47,13 @@ async function findById(id) {
   }
 }
 
-module.exports = { getAll, findById };
+async function createNewAuthor(title, author_id) {
+  try {
+    const db = await connection();
+    return await db.collection('authors').insertOne({ title, author_id });
+  } catch (err) {
+    return null;
+  }
+}
+
+module.exports = { getAll, findById, createNewAuthor };
