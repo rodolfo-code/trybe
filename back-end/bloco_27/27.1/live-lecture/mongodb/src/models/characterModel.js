@@ -13,8 +13,6 @@ async function getAllCharacters() {
 
 async function findById(id) {
   try {
-    // if (!ObjectId(id)) return null;
-
     const db = await connection();
     const character = await db
       .collection('characters')
@@ -25,16 +23,33 @@ async function findById(id) {
   }
 }
 
-const create = (name, cartoon) => {
-  const createdCharacter = connection()
-    .then((db) => db.collection('characters').insertOne({ name, cartoon }))
-    .then((result) => result.ops[0]);
+async function create(name, cartoon) {
+  try {
+    const db = await connection();
+    const create = await db
+      .collection('characters')
+      .insertOne({ name, cartoon });
+    return create.ops[0];
+  } catch (err) {
+    return null;
+  }
+}
 
-  return createdCharacter;
-};
+async function deleteCharacter(id) {
+  try {
+    const db = await connection();
+    const deleted = await db
+      .collection('characters')
+      .deleteOne({ _id: ObjectId(id) });
+    return deleted;
+  } catch (err) {
+    return null;
+  }
+}
 
 module.exports = {
   getAllCharacters,
   findById,
   create,
+  deleteCharacter,
 };

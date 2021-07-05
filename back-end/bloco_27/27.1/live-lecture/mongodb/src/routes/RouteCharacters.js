@@ -31,4 +31,12 @@ router.post('/', async (req, res) => {
   return res.status(201).json(newCharacter);
 });
 
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  await Characters.deleteCharacter(id);
+
+  return res.status(201).json({ message: 'Deletado com sucesso' });
+});
+
 module.exports = router;
