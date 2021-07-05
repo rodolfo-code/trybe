@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Authors = require('../models/Authors');
+const Authors = require('../services/AuthorServices');
 
 const router = express.Router();
 
@@ -29,9 +29,13 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const { id, title, author_id } = req.body;
 
-  await Authors.createNewAuthor(title, author_id);
+  const author = await Authors.createNewAuthor(title, author_id);
 
-  res.status(201).send({ message: 'Livro criado com sucesso' });
+  if (!author) {
+    return res.status(400).json({ message: 'Dados inválidos' });
+  }
+
+  res.status(201).send(author);
 });
 
 module.exports = router;
