@@ -13,9 +13,9 @@ const getNewAuthor = ({ id, firstName, middleName, lastName }) => {
   };
 };
 
-const isValid = (firstName, middleName, lastName) => {
+const isValid = (firstName, lastName) => {
   if (!firstName || typeof firstName !== 'string') return false;
-  if (!lastName || typeof lastname !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
 
   return true;
 };
@@ -40,10 +40,21 @@ const findById = async (id) => {
   return getNewAuthor(author);
 };
 
-const create = async (firstName, middleName, lastName) => {
+const createNewAuthor = async (firstName, middleName, lastName) => {
   const authorValid = isValid(firstName, middleName, lastName);
 
+  const hasAuthor = await Author.findByName(firstName, middleName, lastName);
+
   if (!authorValid) return false;
+
+  if (hasAuthor) {
+    return {
+      error: {
+        code: 'alreadyExists',
+        message: 'Um autor já existe com esse nome',
+      },
+    };
+  }
 
   const { insertedId } = await Author.create(firstName, middleName, lastName);
   return getNewAuthor({
@@ -57,5 +68,5 @@ const create = async (firstName, middleName, lastName) => {
 module.exports = {
   getAll,
   findById,
-  create,
+  createNewAuthor,
 };
