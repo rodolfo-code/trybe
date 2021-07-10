@@ -34,6 +34,19 @@ async function findById(id) {
   }
 }
 
+async function findByName(firstName, middleName, lastName) {
+  const query = middleName
+    ? { firstName, middleName, lastName }
+    : { firstName, lastName };
+
+  const db = await connection();
+  const author = await db.collection('authors').findOne(query);
+
+  if (!author) return null;
+
+  return author;
+}
+
 async function createNewAuthor(title, author_id) {
   try {
     const db = await connection();
@@ -43,4 +56,4 @@ async function createNewAuthor(title, author_id) {
   }
 }
 
-module.exports = { getAll, findById, createNewAuthor };
+module.exports = { getAll, findById, createNewAuthor, findByName };
