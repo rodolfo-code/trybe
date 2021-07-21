@@ -1,6 +1,5 @@
 const express = require('express');
 const Characters = require('../models/characterModel');
-const connection = require('../models/connection');
 
 const router = express.Router();
 

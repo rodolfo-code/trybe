@@ -7,9 +7,9 @@ const bookMiddleware = async (req, res, next) => {
     return res.status(400).send({ message: 'Title inválido ou não existe' });
   }
 
-  const hasAuthorId = await Author.findById(author_id);
+  // const hasAuthorId = ;
 
-  if (!hasAuthorId || typeof author_id !== 'number') {
+  if (!(await Author.findById(author_id))) {
     return res
       .status(400)
       .send({ message: 'Author_id inválido ou não existe' });
