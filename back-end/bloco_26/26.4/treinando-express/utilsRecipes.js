@@ -35,19 +35,4 @@ async function changeRecipe(obj) {
   return await readFile();
 }
 
-// deleteRecipe(12345).then((data) => console.log(data));
-
 module.exports = { deleteRecipe, changeRecipe };
-
-// [
-//   {
-//     "id":12345,
-//     "name":"farofa de bacon",
-//     "ingredientes":["farofa", "bacon"]
-//   },
-//   {
-//     "id":12346,
-//     "name":"ovo mexido",
-//     "ingredientes":["ovo"]
-//   }
-// ]
