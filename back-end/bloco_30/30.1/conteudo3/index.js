@@ -9,7 +9,7 @@ const CIDADES = {
   }
 }
 
-async function consultaCEP(cidade) {
+async function consultaCEP(cidade, service) {
   const { cep } = CIDADES[`${cidade}`]
 
   const valida = validaCEP(cep)
@@ -17,13 +17,25 @@ async function consultaCEP(cidade) {
   let cepTratado;
   if (valida) {
     cepTratado = cep.replace(/[^\d]+/g, "");
-    const URL = `https://brasilapi.com.br/api/cep/v1/${cepTratado}`
-
-    const request = await axios.get(URL)
-    console.log(request.data)
+    service(cepTratado)
+    // console.log(request.data)
   } else {
     console.log('digita o dep certo seu desatento')
   }
+}
+
+async function brasilAPI(cep) {
+  const URL = `https://brasilapi.com.br/api/cep/v1/${cep}`;
+
+  const request = await axios.get(URL)
+  console.log(request.data)
+}
+
+async function viaCEP(cep) {
+  const URL = `https://viacep.com.br/ws/${cep}/json/`
+
+  const request = await axios.get(URL)
+  console.log(request.data)
 }
 
 function validaCEP(cep) {
@@ -31,4 +43,4 @@ function validaCEP(cep) {
   return regexCEP.test(cep)
 }
 
-consultaCEP('itaberaba')
+consultaCEP('itaberaba', viaCEP)
