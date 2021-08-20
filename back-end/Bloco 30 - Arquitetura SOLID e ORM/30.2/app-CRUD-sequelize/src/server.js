@@ -4,7 +4,7 @@ const routes = require('./routes/Router');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
-// require('./database');
+require('./database');
 
 const app = express();
 const PORT = 3000;
