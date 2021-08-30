@@ -7,9 +7,12 @@
     "start": "node index.js",
     "test": "mocha test.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sinon": "^10.0.0"
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "sinon": "^11.1.2"
   }
 }

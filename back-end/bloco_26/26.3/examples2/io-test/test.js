@@ -1,6 +1,6 @@
 const fs = require('fs');
-const sinon = require('sinon');
 const { expect } = require('chai');
+const sinon = require('sinon');
 
 const leArquivo = require('./leArquivo');
 
@@ -19,13 +19,11 @@ describe('leArquivo', () => {
     describe('a resposta', () => {
       it('é uma string', () => {
         const resposta = leArquivo('arquivo.txt');
-
         expect(resposta).to.be.a('string');
       });
 
       it('é igual ao conteúdo do arquivo', () => {
         const resposta = leArquivo('arquivo.txt');
-
         expect(resposta).to.be.equals(CONTEUDO_DO_ARQUIVO);
       });
     });
@@ -42,12 +40,14 @@ describe('leArquivo', () => {
       fs.readFileSync.restore();
     });
 
-    describe('a resposta', () => {
-      it('é igual a "null"', () => {
-        const resposta = leArquivo('arquivo_que_nao_existe.txt');
+    it('é igual a "null"', () => {
+      const resposta = leArquivo('arquivo_que_nao_existe.txt');
 
-        expect(resposta).to.be.equal(null);
-      });
+      expect(resposta).to.be.equals(null);
     });
+    // describe('a resposta', () => {
+    // });
   });
 });
+
+// =====================
