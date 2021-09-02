@@ -2,9 +2,13 @@ const express = require('express');
 const fs = require('fs').promises;
 
 const auxFunction = require('../utils');
+const bodyMiddleware = require('../middlewares/hasBody');
+const validateId = require('../middlewares/validateId');
+
 const DIRETORIO = './books.json';
 
 const router = express.Router();
+
 router.get('/search', async (req, res) => {
   const { title } = req.query;
 
@@ -32,19 +36,19 @@ router.get('/:id', async (req, res) => {
   return res.status(200).json({ message: bookById });
 });
 
-router.post('/', async (req, res) => {
-  const newBook = req.body;
+router.post('/', bodyMiddleware, validateId, async (req, res) => {
+  const { id, title, author } = req.body;
 
   const books = await auxFunction();
-  books.push(newBook);
+  books.push({ id, title, author });
 
   await fs.writeFile(DIRETORIO, JSON.stringify(books));
 
   return res.status(200).json({ message: 'Novo livro inserido com sucesso' });
 });
 
-router.put('/:id', async (req, res) => {
-  const alteredBook = req.body;
+router.put('/:id', bodyMiddleware, async (req, res) => {
+  const { title, author } = req.body;
   const { id } = req.params;
 
   const books = await auxFunction();
@@ -56,7 +60,8 @@ router.put('/:id', async (req, res) => {
 
   const newBook = {
     id: +id,
-    ...alteredBook,
+    title,
+    author,
   };
 
   books.splice(index, 1, newBook);
