@@ -39,6 +39,11 @@ router.get('/:id', async (req, res) => {
 router.post('/', bodyMiddleware, validateId, async (req, res) => {
   const { id, title, author } = req.body;
 
+  const token = req.headers.authorization;
+  if (token !== 'secret') {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
   const books = await auxFunction();
   books.push({ id, title, author });
 
