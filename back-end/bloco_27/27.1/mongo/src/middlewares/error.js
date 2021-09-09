@@ -5,5 +5,5 @@ module.exports = (err, req, res, next) => {
       .json({ error: true, message: err.details[0].message });
   }
 
-  // res.json({ error: err.error, message: err.message });
+  res.json({ error: err.error, message: err.message });
 };

@@ -1,5 +1,5 @@
 const express = require('express');
-const { create } = require('../models/Author');
+const { create, getAllUsers, getUserById } = require('../models/Users');
 
 const router = express.Router();
 
@@ -17,6 +17,27 @@ router.post('/user', async (req, res, next) => {
   const createUser = await create(firstName, lastName, email, password);
 
   res.status(200).json(createUser);
+});
+
+router.get('/user', async (req, res) => {
+  const users = await getAllUsers();
+
+  res.status(200).json(users);
+});
+
+router.get('/user/:id', async (req, res, next) => {
+  const { id } = req.params;
+
+  const user = await getUserById(id);
+
+  if (!user) {
+    return next({
+      error: true,
+      message: 'Usuário não encontrado',
+    });
+  }
+
+  res.status(200).json(user);
 });
 
 module.exports = router;
