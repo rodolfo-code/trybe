@@ -31,7 +31,23 @@ const getById = async (id) => {
   };
 };
 
+const create = async (firstName, middleName, lastName) => {
+  const db = await connection();
+
+  const create = await db
+    .collection('authors')
+    .insertOne({ firstName, middleName, lastName });
+
+  return {
+    id: create.insertedId,
+    firstName,
+    middleName,
+    lastName,
+  };
+};
+
 module.exports = {
   getAllAuthors,
   getById,
+  create,
 };

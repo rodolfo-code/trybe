@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllAuthors, getById } = require('./models/Author');
+const { getAllAuthors, getById, create } = require('./models/Author');
 const { getAllBooks, getBookById } = require('./models/Books');
 
 const app = express();
@@ -24,6 +24,14 @@ app.get('/authors/:id', async (req, res) => {
   const authors = await getById(id);
 
   res.status(200).json(authors);
+});
+
+app.post('/authors', async (req, res) => {
+  const { firstName, middleName, lastName } = req.body;
+
+  const newAuthor = await create(firstName, middleName, lastName);
+
+  res.status(200).json(newAuthor);
 });
 
 app.get('/books', async (req, res) => {
