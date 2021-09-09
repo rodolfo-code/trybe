@@ -1,6 +1,6 @@
 const express = require('express');
-const { getAllAuthors, getById, create } = require('./models/Author');
-const { getAllBooks, getBookById } = require('./models/Books');
+const error = require('./middlewares/error');
+const Router = require('./routes');
 
 const app = express();
 const bodyParser = require('body-parser').json();
@@ -13,40 +13,11 @@ app.get('/', (_req, res) => {
   res.send('ola');
 });
 
-app.get('/authors', async (req, res) => {
-  const authors = await getAllAuthors();
+app.use(Router.AuthorsRouter);
+app.use(Router.BooksRouter);
+app.use(Router.UserRouter);
 
-  res.status(200).json(authors);
-});
-
-app.get('/authors/:id', async (req, res) => {
-  const { id } = req.params;
-  const authors = await getById(id);
-
-  res.status(200).json(authors);
-});
-
-app.post('/authors', async (req, res) => {
-  const { firstName, middleName, lastName } = req.body;
-
-  const newAuthor = await create(firstName, middleName, lastName);
-
-  res.status(200).json(newAuthor);
-});
-
-app.get('/books', async (req, res) => {
-  const books = await getAllBooks();
-
-  res.status(200).json(books);
-});
-
-app.get('/books/:id', async (req, res) => {
-  const { id } = req.params;
-
-  const book = await getBookById(id);
-
-  res.status(200).json(book);
-});
+app.use(error);
 
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}`);
