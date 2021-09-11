@@ -5,6 +5,10 @@ const getAllAuthors = async () => {
   const db = await connection();
   const getAll = await db.collection('authors').find().toArray();
 
+  if (!getAll) {
+    return null;
+  }
+
   return getAll;
 };
 
@@ -21,14 +25,7 @@ const getById = async (id) => {
     return null;
   }
 
-  const { _id, firstName, middleName, lastName } = author;
-
-  return {
-    id: _id,
-    firstName,
-    lastName,
-    name: `${firstName} ${middleName} ${lastName}`,
-  };
+  return author;
 };
 
 const create = async (firstName, middleName, lastName) => {
