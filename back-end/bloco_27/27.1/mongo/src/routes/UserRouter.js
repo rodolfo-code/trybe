@@ -1,18 +1,18 @@
 const express = require('express');
-const { create, getAllUsers, getUserById } = require('../models/Users');
+const userDataValidate = require('../middlewares/userDataValidate');
+const {
+  create,
+  getAllUsers,
+  getUserById,
+  updateUser,
+} = require('../models/Users');
 
 const router = express.Router();
 
 const userSchema = require('../schemas/userSchema');
 
-router.post('/user', async (req, res, next) => {
+router.post('/user', userDataValidate, async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
-  const { error } = userSchema.validate(req.body);
-  // console.log(error.isJoi);
-
-  if (error) {
-    return next(error);
-  }
 
   const createUser = await create(firstName, lastName, email, password);
 
@@ -38,6 +38,27 @@ router.get('/user/:id', async (req, res, next) => {
   }
 
   res.status(200).json(user);
+});
+
+router.put('/user/:id', userDataValidate, async (req, res, next) => {
+  const { firstName, lastName, email, password } = req.body;
+  const { id } = req.params;
+
+  const updatedUser = await updateUser(id, {
+    firstName,
+    lastName,
+    email,
+    password,
+  });
+
+  if (!updatedUser) {
+    return next({
+      error: true,
+      message: 'Usuário não encontrado',
+    });
+  }
+
+  res.status(200).json(updatedUser);
 });
 
 module.exports = router;
