@@ -1,7 +1,4 @@
-const errorCode = {
-  notFound: 404,
-  alreadyExists: 409,
-};
+const errorCode = require('../constants/HttpCode');
 
 module.exports = (err, req, res, next) => {
   if (err.isJoi) {
@@ -13,7 +10,9 @@ module.exports = (err, req, res, next) => {
   const status = errorCode[err.code] || 500;
 
   if (err.code) {
-    return res.status(status).json({ message: err.message });
+    return res
+      .status(status)
+      .json({ code: errorCode[err.code], message: err.message });
     // res.json({ error: err.error, message: err.message });
   }
 
