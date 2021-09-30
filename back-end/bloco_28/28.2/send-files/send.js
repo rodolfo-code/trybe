@@ -27,7 +27,7 @@ const axios = require('axios');
 const fs = require('fs');
 
 /* Criamos um stream de um arquivo */
-const stream = fs.createReadStream('./meu-arquivo.txt');
+const stream = fs.createReadStream('./imagem.png');
 
 /* Aqui, criamos um formulário com um campo chamado 'file' que carregará */
 /* o stream do nosso arquivo */
