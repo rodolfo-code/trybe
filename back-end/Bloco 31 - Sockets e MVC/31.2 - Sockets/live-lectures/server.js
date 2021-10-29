@@ -3,6 +3,14 @@ const net = require('net')
 const connectedClients = []
 let clientId = 0
 
+const broadcastMessage = (from, message) => {
+  connectedClients
+  .filter((client) => client.id !== from.id)
+  .forEach((client) => {
+    client.write(message)
+  })
+}
+
 const server = net.createServer((socket) => {
   console.log('novo cliente conectado')
 
@@ -13,12 +21,13 @@ const server = net.createServer((socket) => {
 
   connectedClients.push(socket)
   
-  connectedClients.forEach((client) => {
-    client.write(`O client ${socket.id} se conectou`)
-  })
+  broadcastMessage(socket, `O cliente ${socket.id} entrou`)
   
   socket.on('data', (data) => {
     console.log(data.toString())
+
+    broadcastMessage(socket, `cliente#${socket.id} > ${data}`)
+    
   })
 })
 
