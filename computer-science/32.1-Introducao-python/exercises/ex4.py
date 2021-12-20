@@ -1,12 +1,11 @@
-lista = [1, 2, 3, 4, 5]
+lista = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]
 
 
-def media_aritmetica(list):
-    count = 0
-    for item in list:
-        count += item
+def maior_nome(lista):
+    maior = lista[0]
+    for i in lista:
+        if len(i) > len(maior):
+            maior = i
+    return maior
 
-    return count / len(list)
-
-
-print(media_aritmetica(lista))
+print(maior_nome(lista))
