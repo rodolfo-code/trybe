@@ -1,8 +1,6 @@
 from enum import Enum
 from random import randint
 
-
-
 class Frame:
     PINS = 10
 
@@ -31,6 +29,14 @@ class Frame:
             self.type = FrameTypes.SPARE
         else:
             self.type = FrameTypes.REGULAR
+
+class TenthFrame(Frame):
+    def __init__(self):
+        super().__init__()
+        self.third_roll = 0
+
+    def pins(self):
+        return super().pins() + self.third_roll
 
 class FrameTypes(Enum):
     UNPLAYED = 0
