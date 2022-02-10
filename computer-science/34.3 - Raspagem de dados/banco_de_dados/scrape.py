@@ -1,5 +1,8 @@
 from parsel import Selector
 import requests
+from banco_dados import client
+
+db = client.catalogue
 
 response = requests.get("http://books.toscrape.com/")
 selector = Selector(text=response.text)
@@ -18,20 +21,18 @@ while next_page_url:
     for product in selector.css(".product_pod"):
 
         book_page_url = product.css(".product_pod a::attr(href)").get()
-        # title = product.css("h3 a::attr(title)").get()
-        # price = product.css(".price_color::text").get()
+        title = product.css("h3 a::attr(title)").get()
+
         response = requests.get(URL_BASE + book_page_url)
         selectorDesc = Selector(text=response.text)
+
         book_description = selectorDesc.css(
             "#product_description ~ p::text"
         ).get()
-        suffix = "...more"
-        if book_description.endswith(suffix):
-            book_description = book_description[: -len(suffix)]
-        # descList.append(book_description)
-        # print(title, price)
-        print(book_description)
-        # descList.append(book_description)
+
+        book_data = {"title": title, "description": book_description}
+
+        db.books.insert_one(book_data)
 
     # Descobre qual é a próxima página
     next_page_url = selector.css(".next a::attr(href)").get()
